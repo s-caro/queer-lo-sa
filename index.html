@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Queer lo sa? · Trivia Night</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ RUOTA ============ -->
+<section id="screen-wheel" class="screen active">
+  <div class="overlay"></div>
+  <div class="content wheel-content">
+    <div class="wheel-wrap" id="wheel-wrap">
+      <div class="wheel-lights" id="wheel-lights"></div>
+      <div class="pointer" id="pointer"></div>
+      <canvas id="wheel-canvas" width="1000" height="1000"></canvas>
+      <button class="hub" id="hub" aria-label="Gira la ruota">GIRA!</button>
+    </div>
+    <div id="wheel-finish-message" class="wheel-status">
+      <div class="finish-title">Grazie per aver giocato! 🏳️‍🌈</div>
+      <img src="immagini/qr-code.png" alt="QR Code" class="qr">
+    </div>
+  </div>
+  <button class="download-answers-icon" id="download-answers-btn" title="Scarica risposte">⬇</button>
+</section>
+
+<!-- ============ DOMANDA ============ -->
+<section id="screen-question" class="screen">
+  <div class="overlay"></div>
+  <div id="question-counter">0/0</div>
+  <div class="timer-container" id="timer-container">
+    <svg class="timer-svg" viewBox="0 0 100 100">
+      <circle class="timer-circle-bg" cx="50" cy="50" r="45"></circle>
+      <circle id="timer-bar" class="timer-circle-fg" cx="50" cy="50" r="45"></circle>
+    </svg>
+    <div id="timer-text">15</div>
+  </div>
+  <div class="content">
+    <div id="category-title" class="category-pill">CATEGORIA</div>
+    <div id="question-text">Testo domanda?</div>
+
+    <!-- palco musicale (solo categoria Musica) -->
+    <div id="music-stage" class="music-stage">
+      <div class="vinyl" id="vinyl">
+        <div class="vinyl-label" id="vinyl-label"><span>♪</span></div>
+      </div>
+      <div class="music-side">
+        <div class="eq" id="eq"></div>
+        <div class="snippet-bar"><div id="snippet-progress"></div></div>
+        <div id="music-status" class="music-status">Clicca per ascoltare</div>
+        <div id="song-reveal" class="song-reveal"></div>
+      </div>
+    </div>
+
+    <div class="options-grid" id="options-container"></div>
+  </div>
+</section>
+
+<!-- ============ PAUSA ============ -->
+<section id="screen-break" class="screen">
+  <div class="overlay"></div>
+  <div class="floating-hearts" id="floating-hearts"></div>
+  <div class="content break-content">
+    <div id="break-timer">10:00</div>
+    <img src="immagini/qr-code.png" alt="QR Code" class="qr small">
+    <p class="break-text">per non perderti nessuna data di <b>«Queer lo sa?»</b> segui la pagina 📱</p>
+  </div>
+</section>
+
+<!-- ============ OVERLAY ANIMAZIONI ============ -->
+<div id="cat-reveal" class="cat-reveal">
+  <div class="cat-reveal-burst"></div>
+  <div class="cat-reveal-card">
+    <div class="cat-reveal-icon" id="cat-reveal-icon">🎵</div>
+    <div class="cat-reveal-name" id="cat-reveal-name">MUSICA</div>
+  </div>
+</div>
+<div id="wipe" class="wipe"><i></i><i></i><i></i><i></i><i></i></div>
+<canvas id="fx-canvas"></canvas>
+
+<!-- ============ COMANDI CONDUTTRICE ============ -->
+<button id="burger" class="burger" aria-label="Menu conduttrice" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+<div id="admin-nav">
+  <button class="admin-btn" onclick="openSettings()">⚙️ Impostazioni</button>
+  <button class="admin-btn" onclick="jumpToQuestion()">Elenco domande…</button>
+  <button class="admin-btn" onclick="goToBreak()">Vai in pausa</button>
+  <button class="admin-btn" id="end-break-btn" onclick="endBreak()">Fine pausa</button>
+  <button class="admin-btn" id="mute-btn" onclick="toggleMute()" title="Audio effetti (M)">🔊</button>
+  <button class="admin-btn" onclick="toggleFullscreen()" title="Schermo intero (F)">⛶</button>
+</div>
+<div id="question-list" class="question-list">
+  <div class="ql-panel">
+    <div class="ql-top">
+      <div><b>Domande della serata</b></div>
+      <button id="ql-close" class="admin-btn">✕ Chiudi (Esc)</button>
+    </div>
+    <div id="ql-list" class="ql-list"></div>
+  </div>
+</div>
+<div id="settings" class="question-list">
+  <div class="ql-panel set-panel">
+    <div class="ql-top"><b>⚙️ Impostazioni della serata</b></div>
+    <div class="set-body">
+      <label>Numero di set (round)<input id="set-rounds" type="number" min="1" max="10"></label>
+      <label>Domande per set<input id="set-per" type="number" min="1" max="50"></label>
+      <label>Una «Coatta vegana» ogni… domande <small>(0 = posizione libera)</small><input id="set-every" type="number" min="0" max="10"></label>
+      <label>Durata pausa tra i set (minuti)<input id="set-break" type="number" min="0" max="60" step="0.5"></label>
+      <label>Secondi per rispondere<input id="set-timer" type="number" min="5" max="120"></label>
+      <div id="set-summary" class="set-summary"></div>
+      <div class="set-actions">
+        <button id="set-cancel" class="admin-btn">Annulla</button>
+        <button id="set-save" class="admin-btn primary">Salva e nuova partita</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+
+<script src="data/domande.js"></script>
+<script src="data/musica.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
