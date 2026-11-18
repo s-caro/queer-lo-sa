@@ -174,7 +174,7 @@ const Music = (() => {
 
   const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
 
-  function jsonp(url, timeout = 9000) {
+  function jsonp(url, timeout = 15000) {
     return new Promise((resolve, reject) => {
       const name = `__itunes_cb_${Date.now()}_${cbCount++}`;
       const script = document.createElement('script');
@@ -199,76 +199,105 @@ const Music = (() => {
     return { url: best.previewUrl, artwork: (best.artworkUrl100 || '').replace('100x100bb', '600x600bb') };
   }
 
+  const resolved = new Map(); // song -> {url, artwork} già trovato (accesso immediato)
+
   function lookup(song) {
+    if (resolved.has(song)) return Promise.resolve(resolved.get(song));
     if (cache.has(song)) return cache.get(song);
     const p = (async () => {
       if (song.audio) return { url: song.audio, artwork: song.copertina || '' };
       return (await searchItunes(song, 'IT').catch(() => null)) || (await searchItunes(song, 'US'));
-    })();
+    })().then(info => { if (!info) throw new Error('not found'); resolved.set(song, info); return info; });
     p.catch(() => cache.delete(song));
     cache.set(song, p);
     return p;
   }
+  const known = song => resolved.get(song) || null;
 
-  function prepare(song) {
-    return lookup(song).then(info => {
-      if (!info) throw new Error('not found');
-      const a = new Audio(); a.preload = 'auto'; a.src = info.url; a.load();
-      return { info, audio: a };
-    });
+  // Un unico lettore audio, riusato per tutte le canzoni: sui telefoni (iPhone in
+  // particolare) un lettore "sbloccato" da un tocco può poi suonare altre canzoni.
+  const player = new Audio();
+  player.preload = 'auto';
+  player.setAttribute('playsinline', '');
+  let token = 0, unlocked = false;
+  const SILENT = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAAAA';
+
+  function unlock() {
+    if (unlocked) return;
+    unlocked = true;
+    if (!player.getAttribute('src')) {
+      player.src = SILENT;
+      const p = player.play(); if (p && p.catch) p.catch(() => {});
+    }
   }
 
-  function fadeTo(target, ms, then, el = audio) {
-    if (!el) return then && then();
-    clearInterval(el._fade);
-    const start = el.volume, t0 = performance.now();
-    el._fade = setInterval(() => {
+  function fadeTo(target, ms, then) {
+    clearInterval(player._fade);
+    const start = player.volume, t0 = performance.now();
+    player._fade = setInterval(() => {
       const k = Math.min(1, (performance.now() - t0) / ms);
-      el.volume = Math.max(0, Math.min(1, start + (target - start) * k));
-      if (k >= 1) { clearInterval(el._fade); then && then(); }
+      try { player.volume = Math.max(0, Math.min(1, start + (target - start) * k)); } catch (e) {}
+      if (k >= 1) { clearInterval(player._fade); then && then(); }
     }, 30);
   }
 
   function stop(fadeMs = 400) {
     clearTimeout(stopTimer); cancelAnimationFrame(progRaf);
-    const a = audio;
-    if (!a) return;
+    if (!audio) return;
     audio = null;
-    fadeTo(0, fadeMs, () => { a.pause(); }, a);
+    const my = ++token;
+    fadeTo(0, fadeMs, () => { if (my === token) player.pause(); });
   }
 
-  // suona [start, start+seconds] e chiama onEnd alla fine
-  function play(audioEl, start, seconds, { onEnd, onProgress } = {}) {
-    stop(150);
-    audio = audioEl;
-    const a = audioEl;
-    const begin = () => {
-      try { a.currentTime = start; } catch (e) {}
-      a.volume = 0;
-      const pr = a.play();
-      if (pr && pr.catch) pr.catch(err => console.warn('play()', err));
-      fadeTo(1, 350, null, a);
+  // suona [start, start+seconds] dell'url. DA CHIAMARE SUBITO NEL TOCCO/CLIC.
+  function play(url, start, seconds, { onEnd, onProgress, onError } = {}) {
+    clearTimeout(stopTimer); cancelAnimationFrame(progRaf); clearInterval(player._fade);
+    const my = ++token;
+    audio = url;
+    if (player.getAttribute('src') !== url) player.src = url;
+    player.muted = start > 0;          // niente "pezzetto" dall'inizio prima del salto
+    try { player.volume = 1; } catch (e) {}
+    const pr = player.play();          // subito, dentro il gesto dell'utente
+    if (pr && pr.catch) pr.catch(err => {
+      if (my !== token || (err && err.name === 'AbortError')) return;
+      console.warn('play()', err);
+      audio = null;
+      onError && onError(err);
+    });
+
+    let started = false;
+    const run = () => {
+      if (my !== token || started) return;
+      started = true;
+      if (start > 0) {
+        try { player.currentTime = start; } catch (e) {}
+        player.addEventListener('seeked', () => { if (my === token) player.muted = false; }, { once: true });
+        setTimeout(() => { if (my === token) player.muted = false; }, 700);
+      } else if (player.currentTime > 0.5) {
+        try { player.currentTime = 0; } catch (e) {}
+      }
       const t0 = performance.now();
       const step = () => {
+        if (my !== token) return;
         const k = Math.min(1, (performance.now() - t0) / (seconds * 1000));
         onProgress && onProgress(k);
-        if (k < 1 && audio === a) progRaf = requestAnimationFrame(step);
+        if (k < 1) progRaf = requestAnimationFrame(step);
       };
       progRaf = requestAnimationFrame(step);
       stopTimer = setTimeout(() => {
-        if (audio !== a) return;
-        fadeTo(0, 600, () => { a.pause(); if (audio === a) audio = null; onEnd && onEnd(); }, a);
-      }, seconds * 1000 - 600);
+        if (my !== token) return;
+        fadeTo(0, 600, () => { if (my !== token) return; player.pause(); audio = null; onEnd && onEnd(); });
+      }, Math.max(0, seconds * 1000 - 600));
     };
-    if (a.readyState >= 1) begin();
+    if (player.readyState >= 1) run();
     else {
-      // chiamiamo play() subito (gesto utente) e poi posizioniamo
-      a.muted = true; const p = a.play(); if (p && p.catch) p.catch(() => {});
-      a.addEventListener('loadedmetadata', () => { a.muted = false; begin(); }, { once: true });
+      player.addEventListener('loadedmetadata', run, { once: true });
+      // rete lenta: se dopo 12 s non è partito niente, segnalo il problema
+      setTimeout(() => { if (my === token && !started) { audio = null; player.pause(); onError && onError(new Error('timeout')); } }, 12000);
     }
   }
 
-  return { lookup, prepare, play, stop, get playing() { return !!audio; } };
+  return { lookup, known, play, stop, unlock, get playing() { return !!audio; }, get el() { return player; } };
 })();
 
 /* =========================================================
@@ -662,13 +691,17 @@ function startTimer() {
 }
 
 /* ---------- MUSICA nella domanda ---------- */
-let musicPrep = null;    // { item, promise }
 function prepareMusic(item) {
-  if (musicPrep && musicPrep.item === item) return musicPrep.promise;
-  const promise = Music.prepare(item.question);
-  promise.catch(err => console.warn('Audio non disponibile:', err));
-  musicPrep = { item, promise };
-  return promise;
+  const p = Music.lookup(item.question);
+  p.catch(err => console.warn('Audio non disponibile:', err));
+  return p;
+}
+// chiama fn(info) SUBITO se la canzone è già stata trovata (così il telefono
+// considera la riproduzione parte del tocco), altrimenti appena è pronta
+function withSong(item, fn, fail) {
+  const info = Music.known(item.question);
+  if (info) return fn(info, true);
+  prepareMusic(item).then(info => fn(info, false)).catch(err => fail && fail(err));
 }
 
 function buildEq() {
@@ -693,7 +726,7 @@ function resetMusicStage(item) {
   $('vinyl-label').innerHTML = '<span>♪</span>';
   $('snippet-progress').style.width = '0';
   $('song-reveal').textContent = ''; $('song-reveal').classList.remove('show');
-  $('music-status').textContent = '🎧 Clicca per ascoltare';
+  $('music-status').textContent = '🎧 Tocca per ascoltare';
   prepareMusic(item);
 }
 
@@ -704,20 +737,24 @@ function playMusicQuestion(isReplay = false) {
   const startTimerOnce = () => { if (!timerStarted && phase === 'q-answer') { timerStarted = true; startTimer(); } };
 
   $('music-status').textContent = '⏳ Carico la canzone…';
-  prepareMusic(item).then(({ audio }) => {
+  withSong(item, (info, immediate) => {
     if (currentItem !== item || phase === 'q-revealed') return;
     $('music-status').textContent = '🎶 In ascolto…';
     setMusicPlaying(true);
-    Music.play(audio, song.inizio || 0, seconds, {
+    Music.play(info.url, song.inizio || 0, seconds, {
       onProgress: k => ($('snippet-progress').style.width = `${k * 100}%`),
       onEnd: () => {
         setMusicPlaying(false);
-        if (phase === 'q-answer') $('music-status').textContent = 'Tempo di rispondere! (R = riascolta)';
+        if (phase === 'q-answer') $('music-status').textContent = 'Tempo di rispondere! (tocca il disco per riascoltare)';
         startTimerOnce();
       },
+      onError: () => {
+        setMusicPlaying(false);
+        if (phase === 'q-answer') $('music-status').textContent = '👆 Tocca il disco per far partire la canzone';
+      },
     });
-  }).catch(() => {
-    $('music-status').textContent = '⚠️ Audio non disponibile (serve internet). Canticchiala tu!';
+  }, () => {
+    $('music-status').textContent = '⚠️ Canzone non trovata (serve internet). Tocca il disco per riprovare';
     showToast('Anteprima audio non trovata per questa canzone');
     startTimerOnce();
   });
@@ -729,14 +766,15 @@ function revealMusic() {
   sr.innerHTML = `${escapeHtml(song.titolo)}<small>${escapeHtml(song.artista)}</small>`;
   sr.classList.remove('show'); void sr.offsetWidth; sr.classList.add('show');
   $('music-status').textContent = '';
-  prepareMusic(currentItem).then(({ info, audio }) => {
+  withSong(currentItem, info => {
     if (info.artwork) $('vinyl-label').innerHTML = `<img src="${info.artwork}" alt="">`;
     setMusicPlaying(true);
-    Music.play(audio, song.inizio || 0, CONFIG.MUSIC_REVEAL_SECONDS, {
+    Music.play(info.url, song.inizio || 0, CONFIG.MUSIC_REVEAL_SECONDS, {
       onProgress: k => ($('snippet-progress').style.width = `${k * 100}%`),
       onEnd: () => setMusicPlaying(false),
+      onError: () => setMusicPlaying(false),
     });
-  }).catch(() => {});
+  });
 }
 
 function replayMusic() {
@@ -859,11 +897,13 @@ $('question-list').addEventListener('click', e => {
   if (play) {
     const item = sessionQuestions[+play.dataset.i], song = item.question;
     play.textContent = '⏳';
-    prepareMusic(item).then(({ audio }) => {
-      previewAudio = audio;
-      play.textContent = '▶ Ascolta';
-      Music.play(audio, song.inizio || 0, song.durata || CONFIG.MUSIC_DEFAULT_SECONDS);
-    }).catch(() => (play.textContent = '⚠️ non trovata'));
+    withSong(item, info => {
+      previewAudio = true;
+      play.textContent = '▶ Ascolta lo spezzone';
+      Music.play(info.url, song.inizio || 0, song.durata || CONFIG.MUSIC_DEFAULT_SECONDS, {
+        onError: () => (play.textContent = '👆 Tocca di nuovo'),
+      });
+    }, () => (play.textContent = '⚠️ non trovata'));
     return;
   }
   if (e.target.closest('#ql-close') || e.target.id === 'question-list') closeQuestionList();
@@ -915,6 +955,9 @@ function advance() {
     case 'q-revealed': backToWheelOrBreak(); break;
   }
 }
+
+['pointerdown', 'touchend', 'keydown'].forEach(ev =>
+  document.addEventListener(ev, () => { Music.unlock(); Sfx.unlock(); }, { capture: true, passive: true }));
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && document.body.classList.contains('menu-open')) { toggleMenu(false); return; }
