@@ -55,6 +55,7 @@ const $ = id => document.getElementById(id);
 const shuffle = arr => { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const metaFor = cat => quizData[cat] || categoryMeta[cat] || { color: "#f1c40f", icon: "❓" };
 const isMusic = item => item && item.category === CONFIG.MUSIC_CATEGORY;
+const hasSolution = item => item && !item.question.nessunaSoluzione && !!item.question.a;
 
 /* =========================================================
    SUONI (sintetizzati, nessun file necessario)
@@ -352,7 +353,9 @@ function initializeQuiz(rawData) {
   askedQuestions = sessionQuestions.map(item => ({
     category: item.category,
     question: item.question.q,
-    answer: item.question.a + (isMusic(item) ? `  (${item.question.titolo} — ${item.question.artista})` : ''),
+    answer: hasSolution(item)
+      ? item.question.a + (isMusic(item) ? `  (${item.question.titolo} — ${item.question.artista})` : '')
+      : '(la dà Coatta Vegana) — opzioni: ' + item.question.o.join(' / '),
   }));
   console.log('Domande della serata:', sessionQuestions);
 
@@ -549,6 +552,7 @@ function presentQuestion(index) {
   });
 
   $('options-container').innerHTML = '';
+  $('host-answer').classList.remove('show');
   resetTimerDisplay();
   updateQuestionCounter(true);
 
@@ -577,6 +581,14 @@ function revealAnswer() {
   if (phase !== 'q-answer') return;
   clearInterval(timerInterval);
   $('timer-container').classList.remove('hurry');
+  if (!hasSolution(currentItem)) {
+    // nessuna risposta evidenziata: la soluzione la dà Coatta Vegana a voce
+    const hb = $('host-answer');
+    hb.classList.remove('show'); void hb.offsetWidth; hb.classList.add('show');
+    Sfx.fanfare();
+    phase = 'q-revealed';
+    return;
+  }
   let correctEl = null;
   document.querySelectorAll('.option').forEach(o => {
     if (o.textContent === currentItem.question.a) { o.classList.add('correct'); correctEl = o; }

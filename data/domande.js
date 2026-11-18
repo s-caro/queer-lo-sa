@@ -2,6 +2,7 @@
 // DOMANDE DEL QUIZ  (la categoria "Musica" è in data/musica.js)
 // Formato: "Categoria": [ { "q": domanda, "o": [4 opzioni], "a": risposta esatta } ]
 // La risposta "a" deve essere IDENTICA a una delle opzioni.
+// "nessunaSoluzione": true  → nessuna risposta diventa verde (la dà Coatta Vegana a voce).
 // ============================================================
 window.QUIZ_DATA = {
  "Letteratura": [
@@ -2136,234 +2137,357 @@ window.QUIZ_DATA = {
  ],
  "Coatta vegana": [
   {
-   "q": "Aò, chi s'è inventato la parola «vegan» ner 1944?",
+   "q": "Quale di questi alimenti NON è necessariamente vegano?",
    "o": [
-    "A - Jamie Oliver",
-    "B - Peter Singer",
-    "C - Donald Watson",
-    "D - Leone Tolstoj"
+    "A - Cioccolato fondente",
+    "B - Vino",
+    "C - Pane",
+    "D - Tutti e tre possono non essere vegani"
    ],
-   "a": "C - Donald Watson"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Er seitan, a coatta, de che è fatto?",
+   "q": "Quale vitamina è importante integrare in un'alimentazione vegana?",
    "o": [
-    "A - Soia fermentata",
-    "B - Farina di ceci",
-    "C - Riso pressato",
-    "D - Glutine di frumento"
-   ],
-   "a": "D - Glutine di frumento"
-  },
-  {
-   "q": "Er tempeh da dove viene?",
-   "o": [
-    "A - Giappone",
-    "B - Indonesia",
-    "C - Messico",
-    "D - India"
-   ],
-   "a": "B - Indonesia"
-  },
-  {
-   "q": "Che cos'è l'aquafaba, quella che monti come l'albume?",
-   "o": [
-    "A - Sciroppo d'agave",
-    "B - Succo di aloe",
-    "C - L'acqua di cottura dei ceci",
-    "D - Latte di cocco"
-   ],
-   "a": "C - L'acqua di cottura dei ceci"
-  },
-  {
-   "q": "Qual è la vitamina che chi è vegan deve integrà pe' forza?",
-   "o": [
-    "A - Vitamina K",
+    "A - Vitamina C",
     "B - Vitamina B12",
-    "C - Vitamina C",
-    "D - Vitamina A"
+    "C - Vitamina A",
+    "D - Vitamina K"
    ],
-   "a": "B - Vitamina B12"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Quando se festeggia er World Vegan Day?",
+   "q": "Quale di questi prodotti può essere utilizzato per sostituire le uova in alcune ricette?",
    "o": [
-    "A - 21 marzo",
-    "B - 5 giugno",
-    "C - 1 novembre",
-    "D - 14 febbraio"
+    "A - Acqua faba",
+    "B - Latte di mandorla",
+    "C - Olio di cocco",
+    "D - Farina di riso"
    ],
-   "a": "C - 1 novembre"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Er tofu se fa cagliando...",
+   "q": "Il miele è considerato vegano?",
    "o": [
-    "A - Il latte di mandorla",
-    "B - Il latte di cocco",
-    "C - Il latte di riso",
-    "D - Il latte di soia"
+    "A - Sì, perché è naturale",
+    "B - No, perché è prodotto dalle api",
+    "C - Dipende dal tipo di miele",
+    "D - Solo se biologico"
    ],
-   "a": "D - Il latte di soia"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Veganuary: in che mese te sfidano a provà a magnà vegan?",
+   "q": "Quale di questi alimenti contiene generalmente più proteine per 100 grammi?",
    "o": [
-    "A - Agosto",
-    "B - Gennaio",
-    "C - Marzo",
-    "D - Novembre"
+    "A - Lenticchie cotte",
+    "B - Tofu",
+    "C - Cetriolo",
+    "D - Mela"
    ],
-   "a": "B - Gennaio"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Nelle caramelle gommose, quale ingrediente NUN è vegano?",
+   "q": "Una persona vegana può mangiare pasta?",
    "o": [
-    "A - Pectina",
-    "B - Agar agar",
-    "C - Gelatina",
-    "D - Amido di mais"
+    "A - Mai",
+    "B - Solo pasta integrale",
+    "C - Sì, ma bisogna controllare gli ingredienti",
+    "D - Solo pasta fatta in casa"
    ],
-   "a": "C - Gelatina"
+   "nessunaSoluzione": true
   },
   {
-   "q": "L'agar agar, che addensa come la gelatina, se ricava da...",
+   "q": "Vero o falso? Una dieta vegana può essere adatta anche agli sportivi.",
    "o": [
-    "A - Ossa di pesce",
-    "B - Semi di lino",
-    "C - Radici di manioca",
-    "D - Alghe rosse"
+    "Vero",
+    "Falso"
    ],
-   "a": "D - Alghe rosse"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Er colorante rosso E120 (carminio) da dove arriva?",
+   "q": "Vero o falso? Essere vegani significa necessariamente mangiare sano.",
    "o": [
-    "A - Dal petrolio",
-    "B - Da un insetto, la cocciniglia",
-    "C - Dalla barbabietola",
-    "D - Dal pomodoro"
+    "Vero",
+    "Falso"
    ],
-   "a": "B - Da un insetto, la cocciniglia"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Perché certi vini NUN so' vegani?",
+   "q": "Vero o falso? Il latte vaccino è indispensabile per avere ossa forti.",
    "o": [
-    "A - Invecchiati in botti di pelle",
-    "B - Contengono miele",
-    "C - Fermentati con lievito di birra",
-    "D - Chiarificati con albume, caseina o colla di pesce"
+    "Vero",
+    "Falso"
    ],
-   "a": "D - Chiarificati con albume, caseina o colla di pesce"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Er lievito alimentare in scaglie lo usi perché ricorda er sapore der...",
+   "q": "Vero o falso? Un prodotto vegano è automaticamente più sostenibile di uno non vegano.",
    "o": [
-    "A - Caffè",
-    "B - Bacon",
-    "C - Formaggio",
-    "D - Cioccolato"
+    "Vero",
+    "Falso"
    ],
-   "a": "C - Formaggio"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Er jackfruit (giaco) sfilacciato lo usano pe' imità...",
+   "q": "Vero o falso? Si può essere vegani e indossare scarpe in pelle sintetica.",
    "o": [
-    "A - Uova strapazzate",
-    "B - Salmone affumicato",
-    "C - Carne sfilacciata (pulled pork)",
-    "D - Burro"
+    "Vero",
+    "Falso"
    ],
-   "a": "C - Carne sfilacciata (pulled pork)"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Pe' 'a legge UE, sull'etichetta der «latte» de soia che ce deve stà scritto?",
+   "q": "Vero o falso? Esistono prodotti cosmetici testati sugli animali che non contengono ingredienti animali.",
    "o": [
-    "A - Latte di soia",
-    "B - Succo di soia",
-    "C - Latte vegetale",
-    "D - Bevanda di soia"
+    "Vero",
+    "Falso"
    ],
-   "a": "D - Bevanda di soia"
+   "nessunaSoluzione": true
   },
   {
-   "q": "Pe' assorbì mejo er ferro de li legumi, a che li abbini?",
+   "q": "Vero o falso? Una dieta vegana può essere seguita anche durante la gravidanza, se adeguatamente pianificata e monitorata.",
    "o": [
-    "A - Alla vitamina C (es. limone)",
-    "B - Al tè",
-    "C - Al caffè",
-    "D - Al latte"
+    "Vero",
+    "Falso"
    ],
-   "a": "A - Alla vitamina C (es. limone)"
-  },
-  {
-   "q": "Quale de 'sti alimenti NUN è vegano?",
-   "o": [
-    "A - Miele",
-    "B - Sciroppo d'acero",
-    "C - Tofu",
-    "D - Tempeh"
-   ],
-   "a": "A - Miele"
-  },
-  {
-   "q": "Su che legume se basa l'hummus?",
-   "o": [
-    "A - Fagioli neri",
-    "B - Ceci",
-    "C - Lenticchie",
-    "D - Fave"
-   ],
-   "a": "B - Ceci"
-  },
-  {
-   "q": "Er tahin è 'na crema de...",
-   "o": [
-    "A - Arachidi",
-    "B - Ceci",
-    "C - Semi di sesamo",
-    "D - Anacardi"
-   ],
-   "a": "C - Semi di sesamo"
-  },
-  {
-   "q": "Er miso è 'na pasta fermentata de...",
-   "o": [
-    "A - Funghi",
-    "B - Riso soffiato",
-    "C - Soia",
-    "D - Alghe"
-   ],
-   "a": "C - Soia"
-  },
-  {
-   "q": "Quale classico romano è già vegano così com'è?",
-   "o": [
-    "A - Saltimbocca",
-    "B - Carciofi alla romana",
-    "C - Supplì",
-    "D - Puntarelle con le alici"
-   ],
-   "a": "B - Carciofi alla romana"
-  },
-  {
-   "q": "Er latte de cocco in lattina se fa co'...",
-   "o": [
-    "A - La buccia del cocco",
-    "B - La polpa del cocco grattugiata e spremuta",
-    "C - Il cocco essiccato e il latte vaccino",
-    "D - L'acqua del cocco"
-   ],
-   "a": "B - La polpa del cocco grattugiata e spremuta"
-  },
-  {
-   "q": "La «carne» de soia disidratata che trovi ar supermercato se chiama...",
-   "o": [
-    "A - Tempeh",
-    "B - Tofu affumicato",
-    "C - Seitan",
-    "D - Proteine di soia testurizzate"
-   ],
-   "a": "D - Proteine di soia testurizzate"
+   "nessunaSoluzione": true
   }
  ]
 };
+
+/* ============================================================
+   VECCHIE DOMANDE «COATTA VEGANA» (disattivate)
+   Per riattivarle, spostale dentro "Coatta vegana" qui sopra.
+[
+ {
+  "q": "Aò, chi s'è inventato la parola «vegan» ner 1944?",
+  "o": [
+   "A - Jamie Oliver",
+   "B - Peter Singer",
+   "C - Donald Watson",
+   "D - Leone Tolstoj"
+  ],
+  "a": "C - Donald Watson"
+ },
+ {
+  "q": "Er seitan, a coatta, de che è fatto?",
+  "o": [
+   "A - Soia fermentata",
+   "B - Farina di ceci",
+   "C - Riso pressato",
+   "D - Glutine di frumento"
+  ],
+  "a": "D - Glutine di frumento"
+ },
+ {
+  "q": "Er tempeh da dove viene?",
+  "o": [
+   "A - Giappone",
+   "B - Indonesia",
+   "C - Messico",
+   "D - India"
+  ],
+  "a": "B - Indonesia"
+ },
+ {
+  "q": "Che cos'è l'aquafaba, quella che monti come l'albume?",
+  "o": [
+   "A - Sciroppo d'agave",
+   "B - Succo di aloe",
+   "C - L'acqua di cottura dei ceci",
+   "D - Latte di cocco"
+  ],
+  "a": "C - L'acqua di cottura dei ceci"
+ },
+ {
+  "q": "Qual è la vitamina che chi è vegan deve integrà pe' forza?",
+  "o": [
+   "A - Vitamina K",
+   "B - Vitamina B12",
+   "C - Vitamina C",
+   "D - Vitamina A"
+  ],
+  "a": "B - Vitamina B12"
+ },
+ {
+  "q": "Quando se festeggia er World Vegan Day?",
+  "o": [
+   "A - 21 marzo",
+   "B - 5 giugno",
+   "C - 1 novembre",
+   "D - 14 febbraio"
+  ],
+  "a": "C - 1 novembre"
+ },
+ {
+  "q": "Er tofu se fa cagliando...",
+  "o": [
+   "A - Il latte di mandorla",
+   "B - Il latte di cocco",
+   "C - Il latte di riso",
+   "D - Il latte di soia"
+  ],
+  "a": "D - Il latte di soia"
+ },
+ {
+  "q": "Veganuary: in che mese te sfidano a provà a magnà vegan?",
+  "o": [
+   "A - Agosto",
+   "B - Gennaio",
+   "C - Marzo",
+   "D - Novembre"
+  ],
+  "a": "B - Gennaio"
+ },
+ {
+  "q": "Nelle caramelle gommose, quale ingrediente NUN è vegano?",
+  "o": [
+   "A - Pectina",
+   "B - Agar agar",
+   "C - Gelatina",
+   "D - Amido di mais"
+  ],
+  "a": "C - Gelatina"
+ },
+ {
+  "q": "L'agar agar, che addensa come la gelatina, se ricava da...",
+  "o": [
+   "A - Ossa di pesce",
+   "B - Semi di lino",
+   "C - Radici di manioca",
+   "D - Alghe rosse"
+  ],
+  "a": "D - Alghe rosse"
+ },
+ {
+  "q": "Er colorante rosso E120 (carminio) da dove arriva?",
+  "o": [
+   "A - Dal petrolio",
+   "B - Da un insetto, la cocciniglia",
+   "C - Dalla barbabietola",
+   "D - Dal pomodoro"
+  ],
+  "a": "B - Da un insetto, la cocciniglia"
+ },
+ {
+  "q": "Perché certi vini NUN so' vegani?",
+  "o": [
+   "A - Invecchiati in botti di pelle",
+   "B - Contengono miele",
+   "C - Fermentati con lievito di birra",
+   "D - Chiarificati con albume, caseina o colla di pesce"
+  ],
+  "a": "D - Chiarificati con albume, caseina o colla di pesce"
+ },
+ {
+  "q": "Er lievito alimentare in scaglie lo usi perché ricorda er sapore der...",
+  "o": [
+   "A - Caffè",
+   "B - Bacon",
+   "C - Formaggio",
+   "D - Cioccolato"
+  ],
+  "a": "C - Formaggio"
+ },
+ {
+  "q": "Er jackfruit (giaco) sfilacciato lo usano pe' imità...",
+  "o": [
+   "A - Uova strapazzate",
+   "B - Salmone affumicato",
+   "C - Carne sfilacciata (pulled pork)",
+   "D - Burro"
+  ],
+  "a": "C - Carne sfilacciata (pulled pork)"
+ },
+ {
+  "q": "Pe' 'a legge UE, sull'etichetta der «latte» de soia che ce deve stà scritto?",
+  "o": [
+   "A - Latte di soia",
+   "B - Succo di soia",
+   "C - Latte vegetale",
+   "D - Bevanda di soia"
+  ],
+  "a": "D - Bevanda di soia"
+ },
+ {
+  "q": "Pe' assorbì mejo er ferro de li legumi, a che li abbini?",
+  "o": [
+   "A - Alla vitamina C (es. limone)",
+   "B - Al tè",
+   "C - Al caffè",
+   "D - Al latte"
+  ],
+  "a": "A - Alla vitamina C (es. limone)"
+ },
+ {
+  "q": "Quale de 'sti alimenti NUN è vegano?",
+  "o": [
+   "A - Miele",
+   "B - Sciroppo d'acero",
+   "C - Tofu",
+   "D - Tempeh"
+  ],
+  "a": "A - Miele"
+ },
+ {
+  "q": "Su che legume se basa l'hummus?",
+  "o": [
+   "A - Fagioli neri",
+   "B - Ceci",
+   "C - Lenticchie",
+   "D - Fave"
+  ],
+  "a": "B - Ceci"
+ },
+ {
+  "q": "Er tahin è 'na crema de...",
+  "o": [
+   "A - Arachidi",
+   "B - Ceci",
+   "C - Semi di sesamo",
+   "D - Anacardi"
+  ],
+  "a": "C - Semi di sesamo"
+ },
+ {
+  "q": "Er miso è 'na pasta fermentata de...",
+  "o": [
+   "A - Funghi",
+   "B - Riso soffiato",
+   "C - Soia",
+   "D - Alghe"
+  ],
+  "a": "C - Soia"
+ },
+ {
+  "q": "Quale classico romano è già vegano così com'è?",
+  "o": [
+   "A - Saltimbocca",
+   "B - Carciofi alla romana",
+   "C - Supplì",
+   "D - Puntarelle con le alici"
+  ],
+  "a": "B - Carciofi alla romana"
+ },
+ {
+  "q": "Er latte de cocco in lattina se fa co'...",
+  "o": [
+   "A - La buccia del cocco",
+   "B - La polpa del cocco grattugiata e spremuta",
+   "C - Il cocco essiccato e il latte vaccino",
+   "D - L'acqua del cocco"
+  ],
+  "a": "B - La polpa del cocco grattugiata e spremuta"
+ },
+ {
+  "q": "La «carne» de soia disidratata che trovi ar supermercato se chiama...",
+  "o": [
+   "A - Tempeh",
+   "B - Tofu affumicato",
+   "C - Seitan",
+   "D - Proteine di soia testurizzate"
+  ],
+  "a": "D - Proteine di soia testurizzate"
+ }
+]
+============================================================ */
