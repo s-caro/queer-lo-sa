@@ -201,18 +201,30 @@ const Music = (() => {
 
   const resolved = new Map(); // song -> {url, artwork} già trovato (accesso immediato)
 
+  // link già salvati in data/musica.js: disponibili subito, senza cercare su iTunes
+  function saved(song) {
+    if (song.audio) return { url: song.audio, artwork: song.copertina || '' };
+    if (song.anteprima && !song._anteprimaRotta) return { url: song.anteprima, artwork: song.copertina || '' };
+    return null;
+  }
+  function forget(song) {               // il link salvato non funziona più: si cerca dal vivo
+    song._anteprimaRotta = true;
+    resolved.delete(song); cache.delete(song);
+  }
+
   function lookup(song) {
+    const sv = saved(song);
+    if (sv) { resolved.set(song, sv); return Promise.resolve(sv); }
     if (resolved.has(song)) return Promise.resolve(resolved.get(song));
     if (cache.has(song)) return cache.get(song);
     const p = (async () => {
-      if (song.audio) return { url: song.audio, artwork: song.copertina || '' };
       return (await searchItunes(song, 'IT').catch(() => null)) || (await searchItunes(song, 'US'));
     })().then(info => { if (!info) throw new Error('not found'); resolved.set(song, info); return info; });
     p.catch(() => cache.delete(song));
     cache.set(song, p);
     return p;
   }
-  const known = song => resolved.get(song) || null;
+  const known = song => saved(song) || resolved.get(song) || null;
 
   // Un unico lettore audio, riusato per tutte le canzoni: sui telefoni (iPhone in
   // particolare) un lettore "sbloccato" da un tocco può poi suonare altre canzoni.
@@ -266,6 +278,13 @@ const Music = (() => {
     });
 
     let started = false;
+    const onMediaError = () => {
+      if (my !== token) return;
+      audio = null;
+      const code = player.error ? player.error.code : '?';
+      onError && onError(Object.assign(new Error('media'), { name: 'MediaError' + code, media: true }));
+    };
+    player.addEventListener('error', onMediaError, { once: true });
     const run = () => {
       if (my !== token || started) return;
       started = true;
@@ -297,7 +316,7 @@ const Music = (() => {
     }
   }
 
-  return { lookup, known, play, stop, unlock, get playing() { return !!audio; }, get el() { return player; } };
+  return { lookup, known, forget, play, stop, unlock, get playing() { return !!audio; }, get el() { return player; } };
 })();
 
 /* =========================================================
@@ -748,13 +767,14 @@ function playMusicQuestion(isReplay = false) {
         if (phase === 'q-answer') $('music-status').textContent = 'Tempo di rispondere! (tocca il disco per riascoltare)';
         startTimerOnce();
       },
-      onError: () => {
+      onError: err => {
         setMusicPlaying(false);
-        if (phase === 'q-answer') $('music-status').textContent = '👆 Tocca il disco per far partire la canzone';
+        if (err && err.media && !song.audio) { Music.forget(song); prepareMusic(item); }
+        if (phase === 'q-answer') $('music-status').textContent = `👆 Tocca il disco per far partire la canzone (${err && err.name || 'errore'})`;
       },
     });
-  }, () => {
-    $('music-status').textContent = '⚠️ Canzone non trovata (serve internet). Tocca il disco per riprovare';
+  }, err => {
+    $('music-status').textContent = `⚠️ Canzone non trovata (${err && err.message || 'rete'}). Tocca il disco per riprovare`;
     showToast('Anteprima audio non trovata per questa canzone');
     startTimerOnce();
   });
