@@ -409,6 +409,16 @@ function buildTriviaNightSubset(rawData) {
   return slots.map(s => s || (leftovers.length ? { category: '?', question: leftovers.pop() } : null)).filter(Boolean);
 }
 
+function answerEntry(item) {
+  return {
+    category: item.category,
+    question: item.question.q,
+    answer: hasSolution(item)
+      ? item.question.a + (isMusic(item) ? `  (${item.question.titolo} — ${item.question.artista})` : '')
+      : '(la dà Coatta Vegana) — opzioni: ' + item.question.o.join(' / '),
+  };
+}
+
 function initializeQuiz(rawData) {
   quizData = normalizeQuizData(rawData);
   wheelSlices = Object.keys(quizData);
@@ -416,13 +426,7 @@ function initializeQuiz(rawData) {
   totalQuestions = sessionQuestions.length;
   questionsAsked = 0;
   shownBreakMilestones.clear();
-  askedQuestions = sessionQuestions.map(item => ({
-    category: item.category,
-    question: item.question.q,
-    answer: hasSolution(item)
-      ? item.question.a + (isMusic(item) ? `  (${item.question.titolo} — ${item.question.artista})` : '')
-      : '(la dà Coatta Vegana) — opzioni: ' + item.question.o.join(' / '),
-  }));
+  askedQuestions = sessionQuestions.map(answerEntry);
   console.log('Domande della serata:', sessionQuestions);
 
   buildWheelLights();
@@ -911,7 +915,8 @@ function setOf(i) {
   return k;
 }
 
-function openQuestionList() {
+function openQuestionList(focusIndex) {
+  closeReplace(true);
   const list = $('ql-list'); list.innerHTML = '';
   let lastSet = -1;
   sessionQuestions.forEach((item, i) => {
@@ -923,22 +928,99 @@ function openQuestionList() {
     }
     const meta = metaFor(item.category), q = item.question;
     const card = document.createElement('div');
+    card.id = 'ql-card-' + i;
     card.className = 'ql-card' + (i < questionsAsked - 1 ? ' done' : '') + (i === questionsAsked - 1 ? ' current' : '');
     card.style.setProperty('--c', meta.color);
     const opts = q.o.map(o => `<li>${escapeHtml(o)}</li>`).join('');
     const song = isMusic(item) ? `<div class="ql-song"><button class="ql-play" data-i="${i}">▶ Ascolta lo spezzone</button></div>` : '';
     card.innerHTML = `
       <div class="ql-head"><span class="ql-num">${i + 1}</span><span class="ql-cat">${meta.icon} ${escapeHtml(item.category)}</span>
+        ${i >= questionsAsked ? `<button class="ql-swap" data-i="${i}" title="Sostituisci con un'altra domanda">↻ Sostituisci</button>` : ''}
         <button class="ql-go" data-i="${i}">Vai ▸</button></div>
       <div class="ql-q">${escapeHtml(q.q)}</div>${song}<ul class="ql-opts">${opts}</ul>`;
     list.appendChild(card);
   });
   $('question-list').classList.add('show');
-  const cur = list.querySelector('.current') || list.querySelector('.ql-card:not(.done)');
+  const focus = focusIndex != null ? $('ql-card-' + focusIndex) : null;
+  const cur = focus || list.querySelector('.current') || list.querySelector('.ql-card:not(.done)');
   if (cur) cur.scrollIntoView({ block: 'center' });
+  if (focus) { focus.classList.remove('flash'); void focus.offsetWidth; focus.classList.add('flash'); }
+}
+
+/* ---------- SOSTITUZIONE DI UNA DOMANDA ---------- */
+let replaceState = null;   // { index, category, candidates }
+
+function unusedQuestions(cat) {
+  const used = new Set(sessionQuestions.map(x => x.question));
+  return (RAW_DATA[cat] || []).filter(q => !used.has(q));
+}
+
+function openReplace(i) {
+  replaceState = { index: i };
+  $('question-list').classList.add('replacing');
+  showReplaceCategories();
+}
+
+function closeReplace(silent) {
+  replaceState = null;
+  $('question-list').classList.remove('replacing');
+  $('ql-replace').innerHTML = '';
+  $('ql-title').textContent = 'Domande della serata';
+  if (!silent && previewAudio) { Music.stop(200); previewAudio = null; }
+}
+
+function showReplaceCategories() {
+  const i = replaceState.index, cur = sessionQuestions[i];
+  replaceState.category = null; replaceState.candidates = null;
+  $('ql-title').textContent = `Sostituisci la domanda ${i + 1}`;
+  const cats = Object.keys(RAW_DATA).map(cat => ({ cat, n: unusedQuestions(cat).length, meta: metaFor(cat) }));
+  $('ql-replace').innerHTML = `
+    <div class="qr-bar"><button class="ql-go qr-back" data-back="list">← Torna all'elenco</button>
+      <span>Adesso: ${metaFor(cur.category).icon} ${escapeHtml(cur.category)} — «${escapeHtml(cur.question.q)}»</span></div>
+    <h3 class="ql-set">1. Scegli la categoria</h3>
+    <div class="qr-cats">${cats.map(c => `
+      <button class="qr-cat" data-cat="${escapeHtml(c.cat)}" style="--c:${c.meta.color}" ${c.n ? '' : 'disabled'}>
+        <span class="qr-icon">${c.meta.icon}</span><span class="qr-name">${escapeHtml(c.cat)}</span>
+        <span class="qr-count">${c.n ? c.n + ' disponibili' : 'nessuna libera'}</span></button>`).join('')}
+    </div>`;
+  $('ql-replace').scrollTop = 0;
+}
+
+function showReplaceQuestions(cat) {
+  const i = replaceState.index, meta = metaFor(cat);
+  const cands = unusedQuestions(cat);
+  replaceState.category = cat; replaceState.candidates = cands;
+  $('ql-title').textContent = `Sostituisci la domanda ${i + 1}`;
+  $('ql-replace').innerHTML = `
+    <div class="qr-bar"><button class="ql-go qr-back" data-back="cats">← Categorie</button>
+      <span>${meta.icon} <b>${escapeHtml(cat)}</b>: ${cands.length} domande non ancora usate</span></div>
+    <h3 class="ql-set">2. Scegli la domanda</h3>
+    <div class="qr-list">${cands.map((q, k) => {
+      const music = cat === CONFIG.MUSIC_CATEGORY;
+      return `<div class="ql-card" style="--c:${meta.color}">
+        <div class="ql-head"><span class="ql-cat">${meta.icon} ${escapeHtml(cat)}</span>
+          <button class="ql-go qr-pick" data-k="${k}">Scegli questa ✓</button></div>
+        <div class="ql-q">${escapeHtml(q.q)}</div>
+        ${music ? `<div class="ql-song"><button class="ql-play" data-k="${k}">▶ Ascolta lo spezzone</button></div>` : ''}
+        <ul class="ql-opts">${q.o.map(o => `<li>${escapeHtml(o)}</li>`).join('')}</ul></div>`;
+    }).join('')}</div>`;
+  $('ql-replace').scrollTop = 0;
+}
+
+function pickReplacement(k) {
+  const { index: i, category: cat, candidates } = replaceState;
+  const q = candidates[k];
+  const item = { category: cat, question: q };
+  sessionQuestions[i] = item;
+  askedQuestions[i] = answerEntry(item);
+  if (isMusic(item)) Music.lookup(q).catch(() => {});
+  if (previewAudio) { Music.stop(200); previewAudio = null; }
+  openQuestionList(i);
+  showToast(`Domanda ${i + 1} sostituita con ${metaFor(cat).icon} ${cat}`);
 }
 
 function closeQuestionList() {
+  closeReplace(true);
   $('question-list').classList.remove('show');
   if (previewAudio) { Music.stop(200); previewAudio = null; }
 }
@@ -946,11 +1028,22 @@ function closeQuestionList() {
 let previewAudio = null;
 $('question-list').addEventListener('click', e => {
   e.stopPropagation();
-  const go = e.target.closest('.ql-go');
+  const go = e.target.closest('.ql-go[data-i]');
   if (go) return goToQuestion(+go.dataset.i + 1);
+  const swap = e.target.closest('.ql-swap');
+  if (swap) return openReplace(+swap.dataset.i);
+  const back = e.target.closest('.qr-back');
+  if (back) return back.dataset.back === 'cats' ? showReplaceCategories() : openQuestionList(replaceState && replaceState.index);
+  const catBtn = e.target.closest('.qr-cat');
+  if (catBtn) return showReplaceQuestions(catBtn.dataset.cat);
+  const pick = e.target.closest('.qr-pick');
+  if (pick) return pickReplacement(+pick.dataset.k);
   const play = e.target.closest('.ql-play');
   if (play) {
-    const item = sessionQuestions[+play.dataset.i], song = item.question;
+    const item = play.dataset.k != null
+      ? { category: CONFIG.MUSIC_CATEGORY, question: replaceState.candidates[+play.dataset.k] }
+      : sessionQuestions[+play.dataset.i];
+    const song = item.question;
     play.textContent = '⏳';
     withSong(item, info => {
       previewAudio = true;
@@ -1016,7 +1109,14 @@ function advance() {
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && document.body.classList.contains('menu-open')) { toggleMenu(false); return; }
-  if ($('question-list').classList.contains('show')) { if (e.key === 'Escape') closeQuestionList(); return; }
+  if ($('question-list').classList.contains('show')) {
+    if (e.key === 'Escape') {
+      if (replaceState && replaceState.category) showReplaceCategories();
+      else if (replaceState) openQuestionList(replaceState.index);
+      else closeQuestionList();
+    }
+    return;
+  }
   if ($('settings').classList.contains('show')) { if (e.key === 'Escape') closeSettings(); if (e.key === 'Enter') saveSettings(); return; }
   if (['Tab', ' ', 'Enter', 'ArrowRight'].includes(e.key)) { e.preventDefault(); advance(); }
   else if (e.key === 'r' || e.key === 'R') replayMusic();
