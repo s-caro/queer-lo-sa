@@ -13,8 +13,14 @@ const CONFIG = {
   BREAK_MILESTONES: [10, 20],
   SPIN_DURATION_MS: 5200,
   MUSIC_CATEGORY: 'Musica',
-  FIXED_CATEGORY: 'Coatta vegana', // categoria a posizione fissa…
-  FIXED_EVERY: 3,                  // …una domanda ogni 3 (0 = disattiva)
+  // categorie a posizione fissa: una domanda ogni N (0 = posizione libera).
+  // L'ordine conta: se due capitano sulla stessa posizione, vince la prima
+  // e l'altra si sposta sul posto libero più vicino.
+  FIXED: {
+    'Coatta vegana': 3,
+    'Chi vuol essere vegano?': 5,
+    'Musica': 7,
+  },
   MUSIC_DEFAULT_SECONDS: 8,
   MUSIC_REVEAL_SECONDS: 12,   // quanto suona la canzone dopo la risposta
 };
@@ -332,7 +338,7 @@ function normalizeQuizData(rawData) {
 
 function buildTriviaNightSubset(rawData) {
   const N = CONFIG.TRIVIA_NIGHT_QUESTION_LIMIT;
-  const fixedCat = CONFIG.FIXED_CATEGORY, every = CONFIG.FIXED_EVERY;
+  const fixed = Object.entries(CONFIG.FIXED).filter(([, n]) => n > 0);
   const pools = Object.fromEntries(Object.entries(rawData)
     .filter(([, qs]) => Array.isArray(qs) && qs.length > 0)
     .map(([c, qs]) => [c, shuffle(qs)]));
@@ -340,14 +346,25 @@ function buildTriviaNightSubset(rawData) {
   const target = Math.min(N, total);
   const slots = new Array(target).fill(null);
 
-  // 1) posizioni fisse: una domanda di "Coatta vegana" ogni N (3, 6, 9, …)
-  if (pools[fixedCat] && every > 0) {
-    for (let i = every - 1; i < target && pools[fixedCat].length; i += every)
-      slots[i] = { category: fixedCat, question: pools[fixedCat].pop() };
+  // 1) posizioni fisse: es. Coatta vegana ogni 3, Chi vuol essere vegano? ogni 5, Musica ogni 7
+  const nearestFree = pos => {
+    for (let d = 0; d < target; d++) {
+      if (pos + d < target && !slots[pos + d]) return pos + d;
+      if (pos - d >= 0 && !slots[pos - d]) return pos - d;
+    }
+    return -1;
+  };
+  for (const [cat, every] of fixed) {
+    if (!pools[cat]) continue;
+    for (let i = every - 1; i < target && pools[cat].length; i += every) {
+      const p = nearestFree(i);
+      if (p >= 0) slots[p] = { category: cat, question: pools[cat].pop() };
+    }
   }
 
   // 2) le altre domande: equilibrate tra le categorie (a giri)
-  const others = Object.keys(pools).filter(c => c !== fixedCat);
+  const fixedCats = fixed.map(([c]) => c);
+  const others = Object.keys(pools).filter(c => !fixedCats.includes(c));
   const free = slots.reduce((n, s) => n + (s ? 0 : 1), 0);
   const picks = [];
   while (picks.length < free) {
@@ -1022,20 +1039,22 @@ $('download-answers-btn').addEventListener('click', e => { e.stopPropagation(); 
 /* =========================================================
    IMPOSTAZIONI (round e domande) — salvate nel browser
    ========================================================= */
-const SETTINGS_KEY = 'queerlosa-settings';
+const SETTINGS_KEY = 'queerlosa-settings-v2';
+const fixedId = cat => 'set-fixed-' + cat.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 let RAW_DATA = {};
 
 function applySettings(st) {
   CONFIG.ROUNDS = Math.max(1, Math.min(10, st.rounds | 0 || 3));
   CONFIG.QUESTIONS_PER_ROUND = Math.max(1, Math.min(50, st.perRound | 0 || 10));
-  CONFIG.FIXED_EVERY = Math.max(0, Math.min(10, st.every ?? CONFIG.FIXED_EVERY) | 0);
+  if (st.fixed) for (const cat of Object.keys(CONFIG.FIXED))
+    if (st.fixed[cat] != null) CONFIG.FIXED[cat] = Math.max(0, Math.min(20, st.fixed[cat] | 0));
   CONFIG.BREAK_SECONDS = Math.max(0, Math.round((st.breakMin ?? CONFIG.BREAK_SECONDS / 60) * 60));
   CONFIG.QUESTION_TIMER_SECONDS = Math.max(5, Math.min(120, st.timer | 0 || CONFIG.QUESTION_TIMER_SECONDS));
   CONFIG.TRIVIA_NIGHT_QUESTION_LIMIT = CONFIG.ROUNDS * CONFIG.QUESTIONS_PER_ROUND;
   CONFIG.BREAK_MILESTONES = Array.from({ length: CONFIG.ROUNDS - 1 }, (_, k) => (k + 1) * CONFIG.QUESTIONS_PER_ROUND);
 }
 function currentSettings() {
-  return { rounds: CONFIG.ROUNDS, perRound: CONFIG.QUESTIONS_PER_ROUND, every: CONFIG.FIXED_EVERY,
+  return { rounds: CONFIG.ROUNDS, perRound: CONFIG.QUESTIONS_PER_ROUND, fixed: { ...CONFIG.FIXED },
            breakMin: CONFIG.BREAK_SECONDS / 60, timer: CONFIG.QUESTION_TIMER_SECONDS };
 }
 function loadSettings() {
@@ -1046,7 +1065,9 @@ function loadSettings() {
 function openSettings() {
   if (busy) return;
   const st = currentSettings();
-  $('set-rounds').value = st.rounds; $('set-per').value = st.perRound; $('set-every').value = st.every;
+  $('set-rounds').value = st.rounds; $('set-per').value = st.perRound;
+  $('set-fixed').innerHTML = Object.entries(st.fixed).map(([cat, n]) =>
+    `<label>${metaFor(cat).icon} ${escapeHtml(cat)}: una ogni… <small>(0 = libera)</small><input id="${fixedId(cat)}" type="number" min="0" max="20" value="${n}"></label>`).join('');
   $('set-break').value = st.breakMin; $('set-timer').value = st.timer;
   updateSettingsSummary();
   $('settings').classList.add('show');
@@ -1054,19 +1075,26 @@ function openSettings() {
 function closeSettings() { $('settings').classList.remove('show'); }
 
 function readSettingsForm() {
-  return { rounds: +$('set-rounds').value, perRound: +$('set-per').value, every: +$('set-every').value,
+  const fixed = {};
+  for (const cat of Object.keys(CONFIG.FIXED)) { const el = $(fixedId(cat)); fixed[cat] = el ? +el.value : CONFIG.FIXED[cat]; }
+  return { rounds: +$('set-rounds').value, perRound: +$('set-per').value, fixed,
            breakMin: +$('set-break').value, timer: +$('set-timer').value };
 }
 function updateSettingsSummary() {
   const st = readSettingsForm();
   const total = (st.rounds | 0) * (st.perRound | 0);
   const available = Object.values(RAW_DATA).reduce((n, q) => n + q.length, 0);
-  const vegan = st.every > 0 ? Math.floor(total / st.every) : 0;
-  const veganAvail = (RAW_DATA[CONFIG.FIXED_CATEGORY] || []).length;
   let txt = `Totale: <b>${total}</b> domande in ${st.rounds | 0} set (${Math.max(0, (st.rounds | 0) - 1)} pause)`;
-  if (vegan) txt += ` · ${vegan} di ${CONFIG.FIXED_CATEGORY}`;
+  const parts = [], warn = [];
+  for (const [cat, n] of Object.entries(st.fixed)) {
+    if (!(n > 0)) continue;
+    const need = Math.floor(total / n), have = (RAW_DATA[cat] || []).length;
+    parts.push(`${need} di ${cat}`);
+    if (need > have) warn.push(`⚠️ Solo ${have} domande di ${cat} (ne servirebbero ${need}): i posti mancanti useranno altre categorie.`);
+  }
+  if (parts.length) txt += '<br>' + parts.join(' · ');
   if (total > available) txt += `<br>⚠️ Ci sono solo ${available} domande disponibili: ne userò ${available}.`;
-  if (vegan > veganAvail) txt += `<br>⚠️ Solo ${veganAvail} domande di ${CONFIG.FIXED_CATEGORY}: i posti mancanti useranno altre categorie.`;
+  if (warn.length) txt += '<br>' + warn.join('<br>');
   $('set-summary').innerHTML = txt;
 }
 

@@ -396,6 +396,7 @@ body.on-break #end-break-btn { display: inline-block; }
   width: 90px; font-family: inherit; font-size: 1.1rem; text-align: center;
   padding: 6px 8px; border-radius: 10px; border: 2px solid rgba(255,255,255,.4); background: rgba(255,255,255,.1); color: #fff;
 }
+.set-fixed { display: flex; flex-direction: column; gap: 14px; }
 .set-summary { background: rgba(255,255,255,.08); border-radius: 12px; padding: 10px 14px; font-size: .95rem; line-height: 1.5; }
 .set-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 4px; }
 .admin-btn.primary { background: var(--l4); border-color: #fff; font-weight: 600; }

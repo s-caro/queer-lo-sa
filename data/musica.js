@@ -24,7 +24,7 @@ window.MUSIC_DATA = [
   "artista": "Hayley Kiyoko",
   "cerca": "Hayley Kiyoko Girls Like Girls",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/dd/0b/80/dd0b8083-7d5f-e1c3-6569-3e29e06ed263/mzaf_5567376838657560695.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/07/5c/75/075c7534-c979-b155-163c-61ce91c865f1/hayley-kiyoko--side-ep-cover-final-1421701314.jpg/600x600bb.jpg"
  },
@@ -41,7 +41,7 @@ window.MUSIC_DATA = [
   "artista": "k.d. lang",
   "cerca": "k.d. lang Constant Craving",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/b8/86/bdb8868f-33d1-56bc-0f7d-3e35a2c74517/mzaf_16813890397941712847.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/75/03/0f/75030f2a-9ca7-e573-8ede-1187117ffbca/075597938487.jpg/600x600bb.jpg"
  },
@@ -58,7 +58,7 @@ window.MUSIC_DATA = [
   "artista": "Lady Gaga",
   "cerca": "Lady Gaga Born This Way",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5e/d7/a2/5ed7a263-1691-2010-da59-1f4ec093b90a/mzaf_6117100412983656708.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/42/9f/0f/429f0fd2-30bd-b64e-27fc-76d8fbbd0988/11UMGIM12476.rgb.jpg/600x600bb.jpg"
  },
@@ -75,7 +75,7 @@ window.MUSIC_DATA = [
   "artista": "Diana Ross",
   "cerca": "Diana Ross I'm Coming Out",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/50/6e/ac/506eac39-ab88-5690-a4b4-b3044567b44b/mzaf_7335323125447306079.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4b/68/94/4b68944b-e875-5729-e97f-c781fc9e0c1e/06UMGIM11291.rgb.jpg/600x600bb.jpg"
  },
@@ -92,7 +92,7 @@ window.MUSIC_DATA = [
   "artista": "Bronski Beat",
   "cerca": "Bronski Beat Smalltown Boy",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/df/1f/04/df1f0434-93bd-cff8-5c9c-82bc4c6f0ce2/mzaf_14954033875438018232.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/76/df/ee/76dfee41-aca3-76c6-e695-c46ec360e090/639842819527.jpg/600x600bb.jpg"
  },
@@ -109,7 +109,7 @@ window.MUSIC_DATA = [
   "artista": "Robyn",
   "cerca": "Robyn Dancing On My Own",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6a/d6/56/6ad65653-090a-b382-d102-4ec16a6bc423/mzaf_7912939526899412158.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c2/03/29/c20329ef-9858-7c0c-da41-89d8fa303a39/00602527588025.rgb.jpg/600x600bb.jpg"
  },
@@ -126,7 +126,7 @@ window.MUSIC_DATA = [
   "artista": "Chappell Roan",
   "cerca": "Chappell Roan Good Luck, Babe!",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c3/6d/4f/c36d4f23-b87f-046d-7a0e-e3e05d180b2a/mzaf_17235999651335214399.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/29/a7/c4/29a7c478-351d-25eb-a116-3e68118cdab8/24UMGIM31246.rgb.jpg/600x600bb.jpg"
  },
@@ -143,7 +143,7 @@ window.MUSIC_DATA = [
   "artista": "Chappell Roan",
   "cerca": "Chappell Roan Pink Pony Club",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fc/52/be/fc52be82-306b-6da5-286b-61056757c008/mzaf_1618848737251148796.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/41/bc/fb/41bcfb43-91d5-931d-5747-fb381803143f/23UMGIM21715.rgb.jpg/600x600bb.jpg"
  },
@@ -160,7 +160,7 @@ window.MUSIC_DATA = [
   "artista": "Troye Sivan",
   "cerca": "Troye Sivan Rush",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/50/a0/32/50a03278-e1e5-6fbc-74e7-b1430e875468/mzaf_12645185790504151795.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1c/50/23/1c50238b-122c-68ec-c70f-c1ac4c11ba85/23UMGIM89347.rgb.jpg/600x600bb.jpg"
  },
@@ -177,7 +177,7 @@ window.MUSIC_DATA = [
   "artista": "George Michael",
   "cerca": "George Michael Freedom! '90",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a5/b2/47/a5b247fd-e4b5-b6b7-0e54-abc01b6257e9/mzaf_6467783939474612562.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/89/46/95/8946959a-e959-f22d-ced2-745feb799454/mzm.upagbaeg.jpg/600x600bb.jpg"
  },
@@ -194,7 +194,7 @@ window.MUSIC_DATA = [
   "artista": "Village People",
   "cerca": "Village People Y.M.C.A.",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5d/98/fe/5d98fe1f-27c6-19c0-df61-9548c38a8c81/mzaf_7269313585203455205.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music/a7/03/22/mzi.wafixwot.jpg/600x600bb.jpg"
  },
@@ -211,7 +211,7 @@ window.MUSIC_DATA = [
   "artista": "Gloria Gaynor",
   "cerca": "Gloria Gaynor I Will Survive",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e7/40/66/e74066a0-d000-1896-cd2e-7b2bc97393ad/mzaf_6935563640938257821.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/33/12/df/3312dfbf-2cd2-e149-1ccb-9688e2a60980/00731454913720.rgb.jpg/600x600bb.jpg"
  },
@@ -228,7 +228,7 @@ window.MUSIC_DATA = [
   "artista": "Madonna",
   "cerca": "Madonna Vogue",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/17/1a/8d/171a8d71-cc90-5f2f-0ea7-93b00c2e2f1f/mzaf_3464712614501227061.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Features114/v4/32/fd/6e/32fd6e25-da2b-10e9-df38-2923c01b6c9b/dj.jaxugjvp.jpg/600x600bb.jpg"
  },
@@ -245,7 +245,7 @@ window.MUSIC_DATA = [
   "artista": "Janelle Monáe",
   "cerca": "Janelle Monáe Make Me Feel",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/55/14/79/5514796b-d9b7-9337-a927-f69ba66e1d75/mzaf_7312185836630948017.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ba/70/b1/ba70b120-7403-d508-218e-6538e20e33c8/19UMGIM00242.rgb.jpg/600x600bb.jpg"
  },
@@ -262,7 +262,7 @@ window.MUSIC_DATA = [
   "artista": "Tegan and Sara",
   "cerca": "Tegan and Sara Closer",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/05/04/fe/0504fe18-daaf-d334-80d0-38880cd68165/mzaf_3096242620987121515.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/07/28/be/0728bee5-e478-e19f-628c-3319cea59a4c/054391975515.jpg/600x600bb.jpg"
  },
@@ -279,7 +279,7 @@ window.MUSIC_DATA = [
   "artista": "The Weather Girls",
   "cerca": "The Weather Girls It's Raining Men",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/bf/c5/b0/bfc5b0b2-89b0-f748-f548-7a2a42cd802f/mzaf_14607944902310340460.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music/5f/d8/4d/mzi.kbldmlld.jpg/600x600bb.jpg"
  },
@@ -296,7 +296,7 @@ window.MUSIC_DATA = [
   "artista": "Cher",
   "cerca": "Cher Believe",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9c/52/d8/9c52d83d-242e-abc4-68fc-273eeb8f0358/mzaf_10714034642820090237.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/bb/90/f3/bb90f392-b78d-f180-ba6b-f04d2d1e62fd/s05.kfnyrece.jpg/600x600bb.jpg"
  },
@@ -313,7 +313,7 @@ window.MUSIC_DATA = [
   "artista": "Raffaella Carrà",
   "cerca": "Raffaella Carrà Rumore",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fc/9d/19/fc9d1922-181e-ea75-1551-c02f33b824c8/mzaf_5941078021656739803.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/6a/5d/92/6a5d9299-ebd1-8b5f-a65e-136be416c601/886446600895.jpg/600x600bb.jpg"
  },
@@ -330,7 +330,7 @@ window.MUSIC_DATA = [
   "artista": "Rettore",
   "cerca": "Rettore Kobra",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6d/07/49/6d07493a-f29d-0d34-1fa7-123be51fffa1/mzaf_2785106091136231943.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/24/1e/79/241e793a-7a80-853d-488e-0806e332b0dc/0859381162926.jpg/600x600bb.jpg"
  },
@@ -347,7 +347,7 @@ window.MUSIC_DATA = [
   "artista": "girl in red",
   "cerca": "girl in red we fell in love in october",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/0b/0b/850b0b97-9255-b5f5-d05e-0e03a1e9b8e7/mzaf_9835609236239012360.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/08/dd/cd/08ddcdac-2d09-c7eb-d2ab-6b3849b04a02/5054526166202.jpg/600x600bb.jpg"
  },
@@ -364,7 +364,7 @@ window.MUSIC_DATA = [
   "artista": "MUNA",
   "cerca": "MUNA Silk Chiffon",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/61/e2/b061e2b0-0f2f-0bf0-1b88-ace7648d73bd/mzaf_9543047056069454016.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/24/e0/72/24e072e9-9afd-0532-48c5-cd0388768abe/55730.jpg/600x600bb.jpg"
  },
@@ -381,7 +381,7 @@ window.MUSIC_DATA = [
   "artista": "The Communards",
   "cerca": "The Communards Don't Leave Me This Way",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/aa/88/63/aa886352-c06f-3db7-2d71-4d63da7d4941/mzaf_5139509552794276541.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/8d/8e/a3/8d8ea397-575f-a3b2-32e4-4501cb1729aa/639842824729.jpg/600x600bb.jpg"
  },
@@ -398,7 +398,7 @@ window.MUSIC_DATA = [
   "artista": "Janelle Monáe",
   "cerca": "Janelle Monáe Pynk",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/26/12/58/2612586c-4491-6c03-9afd-fe2d50ccf193/mzaf_13619902291551721292.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/66/f1/b6/66f1b699-6687-bb79-e38d-cf0ef26f5805/707541084536.jpg/600x600bb.jpg"
  },
@@ -415,7 +415,7 @@ window.MUSIC_DATA = [
   "artista": "Chappell Roan",
   "cerca": "Chappell Roan Femininomenon",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9b/27/99/9b279958-de05-b78f-d04e-f174a8b4040f/mzaf_9057454552178177897.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/42/a0/c5/42a0c5e6-6b98-f1f9-7d6b-6d6c61aba562/23UMGIM84225.rgb.jpg/600x600bb.jpg"
  },
@@ -432,7 +432,7 @@ window.MUSIC_DATA = [
   "artista": "Billie Eilish",
   "cerca": "Billie Eilish LUNCH",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9d/3e/43/9d3e43aa-682a-7979-8547-d339956c409b/mzaf_710286407585135494.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg/600x600bb.jpg"
  },
@@ -449,7 +449,7 @@ window.MUSIC_DATA = [
   "artista": "Tegan and Sara",
   "cerca": "Tegan and Sara Boyfriend",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1b/ce/ed/1bceed48-2fa5-1449-6819-afe12c878ba5/mzaf_3696093983120021529.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/6e/fc/5a/6efc5adb-4b3f-64a7-eb99-16a9f44aea88/093624921516.jpg/600x600bb.jpg"
  },
@@ -466,8 +466,229 @@ window.MUSIC_DATA = [
   "artista": "Hayley Kiyoko",
   "cerca": "Hayley Kiyoko Curious",
   "inizio": 0,
-  "durata": 8,
+  "durata": 15,
   "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d2/65/1e/d2651eff-dad2-b7ee-83a5-0fd7b3fba811/mzaf_14378582096965673564.plus.aac.p.m4a",
   "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c5/fb/8c/c5fb8c14-7c83-11e8-4db6-735370115b6c/075679881083.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Ciao ciao",
+   "B - Xdono",
+   "C - A far l'amore comincia tu",
+   "D - Tanti auguri"
+  ],
+  "a": "D - Tanti auguri",
+  "titolo": "Tanti auguri",
+  "artista": "Raffaella Carrà",
+  "cerca": "Raffaella Carrà Tanti auguri",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8e/52/52/8e5252be-4e1d-e550-54c4-679ce9cab3ae/mzaf_239243331888900160.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/6a/5d/92/6a5d9299-ebd1-8b5f-a65e-136be416c601/886446600895.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Splendido splendente",
+   "B - Bello e impossibile",
+   "C - Vamos a bailar",
+   "D - A far l'amore comincia tu"
+  ],
+  "a": "D - A far l'amore comincia tu",
+  "titolo": "A far l'amore comincia tu",
+  "artista": "Raffaella Carrà",
+  "cerca": "Raffaella Carrà A far l'amore comincia tu",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/24/36/cf/2436cf0f-d07b-0e65-5ae1-212882d32f38/mzaf_16715491452182132104.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/6a/5d/92/6a5d9299-ebd1-8b5f-a65e-136be416c601/886446600895.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Triangolo",
+   "B - Splendido splendente",
+   "C - Rumore",
+   "D - Tanti auguri"
+  ],
+  "a": "B - Splendido splendente",
+  "titolo": "Splendido splendente",
+  "artista": "Rettore",
+  "cerca": "Rettore Splendido splendente",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d3/00/67/d30067ac-b529-51f0-b055-4d0d4b43a512/mzaf_10791666723104029250.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/85/d1/24/85d12404-fa6f-e415-b9ac-6e100c93ef26/825646989904.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Xdono",
+   "B - Ciao ciao",
+   "C - Il mio amico",
+   "D - Fatti bella per te"
+  ],
+  "a": "C - Il mio amico",
+  "titolo": "Il mio amico",
+  "artista": "Anna Tatangelo",
+  "cerca": "Anna Tatangelo Il mio amico",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/90/25/78/902578cc-b510-7ced-49f9-7f7c51f449c5/mzaf_9854646701578959723.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music/1e/69/b6/mzi.clodvmkc.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Il mio amico",
+   "B - Splendido splendente",
+   "C - Triangolo",
+   "D - Pensiero stupendo"
+  ],
+  "a": "D - Pensiero stupendo",
+  "titolo": "Pensiero stupendo",
+  "artista": "Patty Pravo",
+  "cerca": "Patty Pravo Pensiero stupendo",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/47/62/95/4762957f-1203-b758-7389-7b2dc3e52a2f/mzaf_3342028577944798195.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music/11/6a/54/mzi.xrmyhkox.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Pensiero stupendo",
+   "B - Rumore",
+   "C - Triangolo",
+   "D - Xdono"
+  ],
+  "a": "C - Triangolo",
+  "titolo": "Triangolo",
+  "artista": "Renato Zero",
+  "cerca": "Renato Zero Triangolo",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c5/2e/ca/c52eca6f-a7bc-a4c3-eb89-37dcfa6054fd/mzaf_13506876719871360794.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music/bc/1c/65/mzi.ksajqtzy.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Triangolo",
+   "B - Bello e impossibile",
+   "C - Chimica",
+   "D - Xdono"
+  ],
+  "a": "B - Bello e impossibile",
+  "titolo": "Bello e impossibile",
+  "artista": "Gianna Nannini",
+  "cerca": "Gianna Nannini Bello e impossibile",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2a/8c/93/2a8c9312-15df-1217-548c-20491e75927d/mzaf_1946253790276676492.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/da/f1/80/daf18082-e757-5400-698f-fba2fe8d2617/26UMGIM49200.rgb.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Xdono",
+   "B - Kobra",
+   "C - A far l'amore comincia tu",
+   "D - Fatti bella per te"
+  ],
+  "a": "D - Fatti bella per te",
+  "titolo": "Fatti bella per te",
+  "artista": "Paola Turci",
+  "cerca": "Paola Turci Fatti bella per te",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/78/fc/6b/78fc6bad-7347-076a-b4e0-f3c0392b4c8d/mzaf_4614110918126722959.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music82/v4/47/31/ca/4731caa1-4114-c3bb-ee16-e6c89cd89813/190295849542.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Bello e impossibile",
+   "B - Pensiero stupendo",
+   "C - Vamos a bailar",
+   "D - Xdono"
+  ],
+  "a": "C - Vamos a bailar",
+  "titolo": "Vamos a bailar",
+  "artista": "Paola & Chiara",
+  "cerca": "Paola & Chiara Vamos a bailar",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5d/09/13/5d0913b6-13fb-cef3-88be-0b45ce5c79ad/mzaf_12222713298933854007.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Features/94/b5/20/dj.ewcbmhla.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Fatti bella per te",
+   "B - Ciao ciao",
+   "C - Tanti auguri",
+   "D - Bello e impossibile"
+  ],
+  "a": "B - Ciao ciao",
+  "titolo": "Ciao ciao",
+  "artista": "La Rappresentante di Lista",
+  "cerca": "La Rappresentante di Lista Ciao ciao",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8e/0f/dc/8e0fdcd0-bc23-9b03-9314-ada441f8fe29/mzaf_16104247834775033303.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/31/b5/d9/31b5d953-a221-a364-9d95-bff21fc63513/886449836284.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Xdono",
+   "B - A far l'amore comincia tu",
+   "C - Chimica",
+   "D - Triangolo"
+  ],
+  "a": "A - Xdono",
+  "titolo": "Xdono",
+  "artista": "Tiziano Ferro",
+  "cerca": "Tiziano Ferro Xdono",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e4/98/5f/e4985f35-2435-c5fe-91af-da8c36c87a20/mzaf_17929776097396746689.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f4/07/a2/f407a256-4235-4c7b-2cd7-4776b5188caa/8053307091068.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Tanti auguri",
+   "B - Chimica",
+   "C - Il mio amico",
+   "D - Kobra"
+  ],
+  "a": "B - Chimica",
+  "titolo": "Chimica",
+  "artista": "Ditonellapiaga e Rettore",
+  "cerca": "Ditonellapiaga e Rettore Chimica",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0a/c4/be/0ac4beb8-0524-a6e1-403d-90acda1af378/mzaf_8910793910765483484.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/dd/da/2a/ddda2aec-7652-f64a-5850-7f7415a6c6d6/4050538773507.jpg/600x600bb.jpg"
+ },
+ {
+  "q": "Ascolta e indovina il titolo!",
+  "o": [
+   "A - Tanti auguri",
+   "B - Pensiero stupendo",
+   "C - Triangolo",
+   "D - La rabbia non ti basta"
+  ],
+  "a": "D - La rabbia non ti basta",
+  "titolo": "La rabbia non ti basta",
+  "artista": "BigMama",
+  "cerca": "BigMama La rabbia non ti basta",
+  "inizio": 0,
+  "durata": 15,
+  "anteprima": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/53/08/d6/5308d6c5-9727-8b2d-bbc3-90e783f408a9/mzaf_8745625102738661874.plus.aac.p.m4a",
+  "copertina": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/69/74/e3/6974e3d9-758b-1172-a049-79b94328a34a/196871773737.jpg/600x600bb.jpg"
  }
 ];

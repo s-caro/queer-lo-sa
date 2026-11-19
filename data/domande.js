@@ -925,88 +925,88 @@ window.QUIZ_DATA = {
    "a": "D - 070 Shake"
   },
  ],
- "Stereotipi": [
-  {
-   "q": "La 'femme invisibility' nei media è collegata allo stereotipo che...?",
-   "o": [
-    "A - Le femme non esistono",
-    "B - Solo le lesbiche androgine sono riconoscibili",
-    "C - Le donne femminili non posso essere lesbiche",
-    "D - Tutte le lesbiche sono mascoline"
-   ],
-   "a": "C - Le donne femminili non posso essere lesbiche"
-  },
-  {
-   "q": "Il 'moschettone alla cintura' è diventato stereotipo perchè...",
-   "o": [
-    "A - E' obbligatorio nella comunità",
-    "B - E' stato usato dai media",
-    "C - E' una legge sociale",
-    "D - E' un simbolo di ribellione"
-   ],
-   "a": "B - E' stato usato dai media"
-  },
-  {
-   "q": "Quale dei seguenti è uno stereotipo comune sulle lesbiche (spesso chiamato 'U-Haul lesbian')?",
-   "o": [
-    "A - Sono tutte vegetariane",
-    "B - Non sanno guidare",
-    "C - Si trasferiscono insieme dopo pochi giorni di frequentazione",
-    "D - Preferiscono i cani ai gatti"
-   ],
-   "a": "C - Si trasferiscono insieme dopo pochi giorni di frequentazione"
-  },
-  {
-   "q": "Cosa sostiene lo stereotipo della \"lesbian bed death\"?",
-   "o": [
-    "A - Che le lesbiche dormano col gatto",
-    "B - Che il letto si rompa al primo trasloco",
-    "C - Che dopo un po' le coppie lesbiche smettano di fare sesso",
-    "D - Che le lesbiche dormano poco"
-   ],
-   "a": "C - Che dopo un po' le coppie lesbiche smettano di fare sesso"
-  },
-  {
-   "q": "Quale animale domestico è stereotipicamente associato alle lesbiche?",
-   "o": [
-    "A - Il gatto",
-    "B - Il pappagallo",
-    "C - Il furetto",
-    "D - Il criceto"
-   ],
-   "a": "A - Il gatto"
-  },
-  {
-   "q": "Quale marca d'auto è lo stereotipo lesbico per eccellenza (negli USA)?",
-   "o": [
-    "A - Volvo",
-    "B - Jeep",
-    "C - Subaru",
-    "D - Fiat"
-   ],
-   "a": "C - Subaru"
-  },
-  {
-   "q": "Perché, secondo lo stereotipo, le lesbiche tengono le unghie corte?",
-   "o": [
-    "A - Per suonare la chitarra",
-    "B - Per motivi pratici… a letto 😏",
-    "C - Per arrampicare",
-    "D - Perché lo smalto è etero"
-   ],
-   "a": "B - Per motivi pratici… a letto 😏"
-  },
-  {
-   "q": "Qual è il capo d'abbigliamento lesbico per eccellenza?",
-   "o": [
-    "A - La cravatta",
-    "B - La camicia di flanella a quadri",
-    "C - Il maglione a collo alto",
-    "D - Il tubino nero"
-   ],
-   "a": "B - La camicia di flanella a quadri"
-  }
- ],
+//  "Stereotipi": [
+//   {
+//    "q": "La 'femme invisibility' nei media è collegata allo stereotipo che...?",
+//    "o": [
+//     "A - Le femme non esistono",
+//     "B - Solo le lesbiche androgine sono riconoscibili",
+//     "C - Le donne femminili non posso essere lesbiche",
+//     "D - Tutte le lesbiche sono mascoline"
+//    ],
+//    "a": "C - Le donne femminili non posso essere lesbiche"
+//   },
+//   {
+//    "q": "Il 'moschettone alla cintura' è diventato stereotipo perchè...",
+//    "o": [
+//     "A - E' obbligatorio nella comunità",
+//     "B - E' stato usato dai media",
+//     "C - E' una legge sociale",
+//     "D - E' un simbolo di ribellione"
+//    ],
+//    "a": "B - E' stato usato dai media"
+//   },
+//   {
+//    "q": "Quale dei seguenti è uno stereotipo comune sulle lesbiche (spesso chiamato 'U-Haul lesbian')?",
+//    "o": [
+//     "A - Sono tutte vegetariane",
+//     "B - Non sanno guidare",
+//     "C - Si trasferiscono insieme dopo pochi giorni di frequentazione",
+//     "D - Preferiscono i cani ai gatti"
+//    ],
+//    "a": "C - Si trasferiscono insieme dopo pochi giorni di frequentazione"
+//   },
+//   {
+//    "q": "Cosa sostiene lo stereotipo della \"lesbian bed death\"?",
+//    "o": [
+//     "A - Che le lesbiche dormano col gatto",
+//     "B - Che il letto si rompa al primo trasloco",
+//     "C - Che dopo un po' le coppie lesbiche smettano di fare sesso",
+//     "D - Che le lesbiche dormano poco"
+//    ],
+//    "a": "C - Che dopo un po' le coppie lesbiche smettano di fare sesso"
+//   },
+//   {
+//    "q": "Quale animale domestico è stereotipicamente associato alle lesbiche?",
+//    "o": [
+//     "A - Il gatto",
+//     "B - Il pappagallo",
+//     "C - Il furetto",
+//     "D - Il criceto"
+//    ],
+//    "a": "A - Il gatto"
+//   },
+//   {
+//    "q": "Quale marca d'auto è lo stereotipo lesbico per eccellenza (negli USA)?",
+//    "o": [
+//     "A - Volvo",
+//     "B - Jeep",
+//     "C - Subaru",
+//     "D - Fiat"
+//    ],
+//    "a": "C - Subaru"
+//   },
+//   {
+//    "q": "Perché, secondo lo stereotipo, le lesbiche tengono le unghie corte?",
+//    "o": [
+//     "A - Per suonare la chitarra",
+//     "B - Per motivi pratici… a letto 😏",
+//     "C - Per arrampicare",
+//     "D - Perché lo smalto è etero"
+//    ],
+//    "a": "B - Per motivi pratici… a letto 😏"
+//   },
+//   {
+//    "q": "Qual è il capo d'abbigliamento lesbico per eccellenza?",
+//    "o": [
+//     "A - La cravatta",
+//     "B - La camicia di flanella a quadri",
+//     "C - Il maglione a collo alto",
+//     "D - Il tubino nero"
+//    ],
+//    "a": "B - La camicia di flanella a quadri"
+//   }
+//  ],
  "Film": [
   {
    "q": "Quale film del 2013 diretto da Abdellatif Kechiche racconta la relazione tra Adèle ed Emma?",
@@ -1411,178 +1411,178 @@ window.QUIZ_DATA = {
    "a": "B - Taiwan"
   }
  ],
- "Sex toys": [
-  {
-   "q": "Quale termine indica un sex toy progettato per essere utilizzato da due persone contemporaneamente durante un rapporto penetrativo?",
-   "o": [
-    "A - Double-ended dildo",
-    "B - Strap-on",
-    "C - Bullet vibrator",
-    "D - Wand massager"
-   ],
-   "a": "A - Double-ended dildo"
-  },
-  {
-   "q": "Quale termine indica un sex toy progettato per uso anale sicuro?",
-   "o": [
-    "A - Soft core",
-    "B - Triple motor",
-    "C - Flared base",
-    "D - Deep flex"
-   ],
-   "a": "C - Flared base"
-  },
-  {
-   "q": "Cosa significa 'Dual Density Silicone'?",
-   "o": [
-    "A - Silicone con due colori",
-    "B - Silicone impermeabile",
-    "C - Silicone con nucleo rigido e strato morbido",
-    "D - Silicone profumato"
-   ],
-   "a": "C - Silicone con nucleo rigido e strato morbido"
-  },
-  {
-   "q": "Quale sex toy è famoso per la forma di animale?",
-   "o": [
-    "A - Cat vibrator",
-    "B - Rabbit vibrator",
-    "C - Dog vibrator",
-    "D - Snake vibrator"
-   ],
-   "a": "B - Rabbit vibrator"
-  },
-  {
-   "q": "Quale sex toy è generalmente il più silenzioso?",
-   "o": [
-    "A - Bullet vibrator premium",
-    "B - Wand massager",
-    "C - Rabbit vibrator",
-    "D - Plug vibrante"
-   ],
-   "a": "A - Bullet vibrator premium"
-  },
-  {
-   "q": "Quale sex toy è spesso associato alla stimolazione indiretta del clitoride grazie alle vibrazioni ampie e diffuse?",
-   "o": [
-    "A - Plug anale",
-    "B - Wand massager",
-    "C - Cock ring",
-    "D - Glass dildo"
-   ],
-   "a": "B - Wand massager"
-  },
-  {
-   "q": "Quale materiale è considerato tra i più sicuri e igienici per i sex toys grazie alla sua non porosità?",
-   "o": [
-    "A - Jelly",
-    "B - Lattice economico",
-    "C - PVC",
-    "D - Silicone medicale"
-   ],
-   "a": "D - Silicone medicale"
-  },
-  {
-   "q": "Quale pratica indica l’uso di un dildo o strap-on per la penetrazione durante rapporti tra donne?",
-   "o": [
-    "A - Penetrative play",
-    "B - Pegging",
-    "C - Petting",
-    "D - Scissoring"
-   ],
-   "a": "A - Penetrative play"
-  },
-  {
-   "q": "Quale tipo di lubrificante è generalmente consigliato con sex toys in silicone?",
-   "o": [
-    "A - A base siliconica",
-    "B - A base acquosa",
-    "C - A base oleosa",
-    "D - Nessuno"
-   ],
-   "a": "B - A base acquosa"
-  },
-  {
-   "q": "Quale tipo di lubrificante è può danneggiare i sex toys in silicone?",
-   "o": [
-    "A - A base d'acqua",
-    "B - Ipoallergenico",
-    "C - Naturale",
-    "D - A base siliconica"
-   ],
-   "a": "D - A base siliconica"
-  },
-  {
-   "q": "Cosa significa 'Rumbly Vibration' nelle recensioni di sex toys?",
-   "o": [
-    "A - Vibrazione profonda e a bassa frequenza",
-    "B - Vibrazione superficiale e acuta",
-    "C - Vibrazione intermittente casuale",
-    "D - Vibrazione rumorosa"
-   ],
-   "a": "A - Vibrazione profonda e a bassa frequenza"
-  },
-  {
-   "q": "Quale pratica sessuale lesbica prende il nome di “tribadismo”?",
-   "o": [
-    "A - Stimolazione orale",
-    "B - Penetrazione con oggetti",
-    "C - Uso di vibratori",
-    "D - Sfregamento reciproco dei genitali"
-   ],
-   "a": "D - Sfregamento reciproco dei genitali"
-  },
-  {
-   "q": "Cos'è l'\"harness\"?",
-   "o": [
-    "A - Un plug anale",
-    "B - L'imbracatura che regge il dildo in uno strap-on",
-    "C - Un vibratore indossabile",
-    "D - Una corda per il bondage"
-   ],
-   "a": "B - L'imbracatura che regge il dildo in uno strap-on"
-  },
-  {
-   "q": "Su quale tecnologia si basano i \"succhia-clitoride\" tipo Womanizer?",
-   "o": [
-    "A - Calore",
-    "B - Vibrazione ad alta frequenza",
-    "C - Micro-correnti elettriche",
-    "D - Onde di pressione d'aria"
-   ],
-   "a": "D - Onde di pressione d'aria"
-  },
-  {
-   "q": "Chi inventò il primo vibratore elettromeccanico nell'Ottocento?",
-   "o": [
-    "A - Nikola Tesla",
-    "B - Joseph Mortimer Granville",
-    "C - Thomas Edison",
-    "D - Sigmund Freud"
-   ],
-   "a": "B - Joseph Mortimer Granville"
-  },
-  {
-   "q": "Come si può pulire un toy in silicone pieno, senza motore?",
-   "o": [
-    "A - Bollendolo in acqua",
-    "B - Con olio d'oliva",
-    "C - Con lubrificante al silicone",
-    "D - Nel microonde"
-   ],
-   "a": "A - Bollendolo in acqua"
-  },
-  {
-   "q": "Cos'è uno \"strapless strap-on\" (tipo Feeldoe)?",
-   "o": [
-    "A - Un dildo senza imbracatura, con un bulbo inserito da chi lo indossa",
-    "B - Uno strap-on con le cinghie in velcro",
-    "C - Un vibratore senza fili",
-    "D - Un dildo a ventosa"
-   ],
-   "a": "A - Un dildo senza imbracatura, con un bulbo inserito da chi lo indossa"
-  }
- ],
+//  "Sex toys": [
+//   {
+//    "q": "Quale termine indica un sex toy progettato per essere utilizzato da due persone contemporaneamente durante un rapporto penetrativo?",
+//    "o": [
+//     "A - Double-ended dildo",
+//     "B - Strap-on",
+//     "C - Bullet vibrator",
+//     "D - Wand massager"
+//    ],
+//    "a": "A - Double-ended dildo"
+//   },
+//   {
+//    "q": "Quale termine indica un sex toy progettato per uso anale sicuro?",
+//    "o": [
+//     "A - Soft core",
+//     "B - Triple motor",
+//     "C - Flared base",
+//     "D - Deep flex"
+//    ],
+//    "a": "C - Flared base"
+//   },
+//   {
+//    "q": "Cosa significa 'Dual Density Silicone'?",
+//    "o": [
+//     "A - Silicone con due colori",
+//     "B - Silicone impermeabile",
+//     "C - Silicone con nucleo rigido e strato morbido",
+//     "D - Silicone profumato"
+//    ],
+//    "a": "C - Silicone con nucleo rigido e strato morbido"
+//   },
+//   {
+//    "q": "Quale sex toy è famoso per la forma di animale?",
+//    "o": [
+//     "A - Cat vibrator",
+//     "B - Rabbit vibrator",
+//     "C - Dog vibrator",
+//     "D - Snake vibrator"
+//    ],
+//    "a": "B - Rabbit vibrator"
+//   },
+//   {
+//    "q": "Quale sex toy è generalmente il più silenzioso?",
+//    "o": [
+//     "A - Bullet vibrator premium",
+//     "B - Wand massager",
+//     "C - Rabbit vibrator",
+//     "D - Plug vibrante"
+//    ],
+//    "a": "A - Bullet vibrator premium"
+//   },
+//   {
+//    "q": "Quale sex toy è spesso associato alla stimolazione indiretta del clitoride grazie alle vibrazioni ampie e diffuse?",
+//    "o": [
+//     "A - Plug anale",
+//     "B - Wand massager",
+//     "C - Cock ring",
+//     "D - Glass dildo"
+//    ],
+//    "a": "B - Wand massager"
+//   },
+//   {
+//    "q": "Quale materiale è considerato tra i più sicuri e igienici per i sex toys grazie alla sua non porosità?",
+//    "o": [
+//     "A - Jelly",
+//     "B - Lattice economico",
+//     "C - PVC",
+//     "D - Silicone medicale"
+//    ],
+//    "a": "D - Silicone medicale"
+//   },
+//   {
+//    "q": "Quale pratica indica l’uso di un dildo o strap-on per la penetrazione durante rapporti tra donne?",
+//    "o": [
+//     "A - Penetrative play",
+//     "B - Pegging",
+//     "C - Petting",
+//     "D - Scissoring"
+//    ],
+//    "a": "A - Penetrative play"
+//   },
+//   {
+//    "q": "Quale tipo di lubrificante è generalmente consigliato con sex toys in silicone?",
+//    "o": [
+//     "A - A base siliconica",
+//     "B - A base acquosa",
+//     "C - A base oleosa",
+//     "D - Nessuno"
+//    ],
+//    "a": "B - A base acquosa"
+//   },
+//   {
+//    "q": "Quale tipo di lubrificante è può danneggiare i sex toys in silicone?",
+//    "o": [
+//     "A - A base d'acqua",
+//     "B - Ipoallergenico",
+//     "C - Naturale",
+//     "D - A base siliconica"
+//    ],
+//    "a": "D - A base siliconica"
+//   },
+//   {
+//    "q": "Cosa significa 'Rumbly Vibration' nelle recensioni di sex toys?",
+//    "o": [
+//     "A - Vibrazione profonda e a bassa frequenza",
+//     "B - Vibrazione superficiale e acuta",
+//     "C - Vibrazione intermittente casuale",
+//     "D - Vibrazione rumorosa"
+//    ],
+//    "a": "A - Vibrazione profonda e a bassa frequenza"
+//   },
+//   {
+//    "q": "Quale pratica sessuale lesbica prende il nome di “tribadismo”?",
+//    "o": [
+//     "A - Stimolazione orale",
+//     "B - Penetrazione con oggetti",
+//     "C - Uso di vibratori",
+//     "D - Sfregamento reciproco dei genitali"
+//    ],
+//    "a": "D - Sfregamento reciproco dei genitali"
+//   },
+//   {
+//    "q": "Cos'è l'\"harness\"?",
+//    "o": [
+//     "A - Un plug anale",
+//     "B - L'imbracatura che regge il dildo in uno strap-on",
+//     "C - Un vibratore indossabile",
+//     "D - Una corda per il bondage"
+//    ],
+//    "a": "B - L'imbracatura che regge il dildo in uno strap-on"
+//   },
+//   {
+//    "q": "Su quale tecnologia si basano i \"succhia-clitoride\" tipo Womanizer?",
+//    "o": [
+//     "A - Calore",
+//     "B - Vibrazione ad alta frequenza",
+//     "C - Micro-correnti elettriche",
+//     "D - Onde di pressione d'aria"
+//    ],
+//    "a": "D - Onde di pressione d'aria"
+//   },
+//   {
+//    "q": "Chi inventò il primo vibratore elettromeccanico nell'Ottocento?",
+//    "o": [
+//     "A - Nikola Tesla",
+//     "B - Joseph Mortimer Granville",
+//     "C - Thomas Edison",
+//     "D - Sigmund Freud"
+//    ],
+//    "a": "B - Joseph Mortimer Granville"
+//   },
+//   {
+//    "q": "Come si può pulire un toy in silicone pieno, senza motore?",
+//    "o": [
+//     "A - Bollendolo in acqua",
+//     "B - Con olio d'oliva",
+//     "C - Con lubrificante al silicone",
+//     "D - Nel microonde"
+//    ],
+//    "a": "A - Bollendolo in acqua"
+//   },
+//   {
+//    "q": "Cos'è uno \"strapless strap-on\" (tipo Feeldoe)?",
+//    "o": [
+//     "A - Un dildo senza imbracatura, con un bulbo inserito da chi lo indossa",
+//     "B - Uno strap-on con le cinghie in velcro",
+//     "C - Un vibratore senza fili",
+//     "D - Un dildo a ventosa"
+//    ],
+//    "a": "A - Un dildo senza imbracatura, con un bulbo inserito da chi lo indossa"
+//   }
+//  ],
  "Spettacolo": [
   {
    "q": "Quale artista è spesso chiamata 'mother' dalla comunità LGBTQ+ online?",
@@ -1765,118 +1765,118 @@ window.QUIZ_DATA = {
    "a": "C - Hannah Gadsby"
   }
  ],
- "Mate-lesbica": [
-  {
-   "q": "In un gruppo di 100 persone, il 30% si identifica come lesbica. Quante persone sono lesbiche?",
-   "o": [
-    "A - 30",
-    "B - 25",
-    "C - 20",
-    "D - 35"
-   ],
-   "a": "A - 30"
-  },
-  {
-   "q": "In un sondaggio di 2000 persone il 6% si identifica come lesbica. Quante sono?",
-   "o": [
-    "A - 60",
-    "B - 200",
-    "C - 300",
-    "D - 120"
-   ],
-   "a": "D - 120"
-  },
-  {
-   "q": "In un sondaggio, 80 donne lesbiche su 400 sono under 25. Quale è la percentuale?",
-   "o": [
-    "A - 10%",
-    "B - 15%",
-    "C - 20%",
-    "D - 25%"
-   ],
-   "a": "C - 20%"
-  },
-  {
-   "q": "In un gruppo do 250 donne lesbiche, il 40% vive in città grandi. Quante sono?",
-   "o": [
-    "A - 80",
-    "B - 90",
-    "C - 100",
-    "D - 120"
-   ],
-   "a": "C - 100"
-  },
-  {
-   "q": "In un sondaggio, il 40% delle donne queer preferisce relazioni monogame. Se le partecipanti sono 200, quante lo preferiscono?",
-   "o": [
-    "A - 60",
-    "B - 80",
-    "C - 90",
-    "D - 70"
-   ],
-   "a": "B - 80"
-  },
-  {
-   "q": "Se il 25% di una comunità di 80 persone è composto da coppie lesbiche, quante persone fanno parte di queste coppie?",
-   "o": [
-    "A - 10",
-    "B - 30",
-    "C - 20",
-    "D - 40"
-   ],
-   "a": "C - 20"
-  },
-  {
-   "q": "Nel \"Chart\" di Alice ci sono 6 lesbiche e ognuna è stata con tutte le altre esattamente una volta. Quante linee ci sono nel grafico?",
-   "o": [
-    "A - 36",
-    "B - 30",
-    "C - 12",
-    "D - 15"
-   ],
-   "a": "D - 15"
-  },
-  {
-   "q": "Una coppia adotta un gatto al secondo appuntamento. Ogni anno il numero di gatti raddoppia. Quanti gatti dopo 4 anni?",
-   "o": [
-    "A - 12",
-    "B - 8",
-    "C - 32",
-    "D - 16"
-   ],
-   "a": "D - 16"
-  },
-  {
-   "q": "Una playlist di girl in red ha 12 canzoni da 3 minuti e 20 secondi. Quanto dura?",
-   "o": [
-    "A - 40 minuti",
-    "B - 36 minuti",
-    "C - 42 minuti",
-    "D - 38 minuti"
-   ],
-   "a": "A - 40 minuti"
-  },
-  {
-   "q": "Shane va a letto con il 10% delle lesbiche di Los Angeles a ogni stagione, senza mai ripetere. Dopo le 6 stagioni di The L Word, a che percentuale è arrivata?",
-   "o": [
-    "A - 100%",
-    "B - 60%",
-    "C - 46%",
-    "D - 6%"
-   ],
-   "a": "B - 60%"
-  },
-  {
-   "q": "A una serata di Queer lo sa? ci sono 40 persone: il 25% è ex di qualcun'altra presente e, di queste, il 60% è ex della conduttrice. Quante ex ha la conduttrice in sala?",
-   "o": [
-    "A - 4",
-    "B - 6",
-    "C - 10",
-    "D - 15"
-   ],
-   "a": "B - 6"
-  }
- ],
+//  "Mate-lesbica": [
+//   {
+//    "q": "In un gruppo di 100 persone, il 30% si identifica come lesbica. Quante persone sono lesbiche?",
+//    "o": [
+//     "A - 30",
+//     "B - 25",
+//     "C - 20",
+//     "D - 35"
+//    ],
+//    "a": "A - 30"
+//   },
+//   {
+//    "q": "In un sondaggio di 2000 persone il 6% si identifica come lesbica. Quante sono?",
+//    "o": [
+//     "A - 60",
+//     "B - 200",
+//     "C - 300",
+//     "D - 120"
+//    ],
+//    "a": "D - 120"
+//   },
+//   {
+//    "q": "In un sondaggio, 80 donne lesbiche su 400 sono under 25. Quale è la percentuale?",
+//    "o": [
+//     "A - 10%",
+//     "B - 15%",
+//     "C - 20%",
+//     "D - 25%"
+//    ],
+//    "a": "C - 20%"
+//   },
+//   {
+//    "q": "In un gruppo do 250 donne lesbiche, il 40% vive in città grandi. Quante sono?",
+//    "o": [
+//     "A - 80",
+//     "B - 90",
+//     "C - 100",
+//     "D - 120"
+//    ],
+//    "a": "C - 100"
+//   },
+//   {
+//    "q": "In un sondaggio, il 40% delle donne queer preferisce relazioni monogame. Se le partecipanti sono 200, quante lo preferiscono?",
+//    "o": [
+//     "A - 60",
+//     "B - 80",
+//     "C - 90",
+//     "D - 70"
+//    ],
+//    "a": "B - 80"
+//   },
+//   {
+//    "q": "Se il 25% di una comunità di 80 persone è composto da coppie lesbiche, quante persone fanno parte di queste coppie?",
+//    "o": [
+//     "A - 10",
+//     "B - 30",
+//     "C - 20",
+//     "D - 40"
+//    ],
+//    "a": "C - 20"
+//   },
+//   {
+//    "q": "Nel \"Chart\" di Alice ci sono 6 lesbiche e ognuna è stata con tutte le altre esattamente una volta. Quante linee ci sono nel grafico?",
+//    "o": [
+//     "A - 36",
+//     "B - 30",
+//     "C - 12",
+//     "D - 15"
+//    ],
+//    "a": "D - 15"
+//   },
+//   {
+//    "q": "Una coppia adotta un gatto al secondo appuntamento. Ogni anno il numero di gatti raddoppia. Quanti gatti dopo 4 anni?",
+//    "o": [
+//     "A - 12",
+//     "B - 8",
+//     "C - 32",
+//     "D - 16"
+//    ],
+//    "a": "D - 16"
+//   },
+//   {
+//    "q": "Una playlist di girl in red ha 12 canzoni da 3 minuti e 20 secondi. Quanto dura?",
+//    "o": [
+//     "A - 40 minuti",
+//     "B - 36 minuti",
+//     "C - 42 minuti",
+//     "D - 38 minuti"
+//    ],
+//    "a": "A - 40 minuti"
+//   },
+//   {
+//    "q": "Shane va a letto con il 10% delle lesbiche di Los Angeles a ogni stagione, senza mai ripetere. Dopo le 6 stagioni di The L Word, a che percentuale è arrivata?",
+//    "o": [
+//     "A - 100%",
+//     "B - 60%",
+//     "C - 46%",
+//     "D - 6%"
+//    ],
+//    "a": "B - 60%"
+//   },
+//   {
+//    "q": "A una serata di Queer lo sa? ci sono 40 persone: il 25% è ex di qualcun'altra presente e, di queste, il 60% è ex della conduttrice. Quante ex ha la conduttrice in sala?",
+//    "o": [
+//     "A - 4",
+//     "B - 6",
+//     "C - 10",
+//     "D - 15"
+//    ],
+//    "a": "B - 6"
+//   }
+//  ],
  "Chi vuol essere vegano?": [
  {
   "q": "Chi si è inventato la parola «vegan» nel 1944?",
