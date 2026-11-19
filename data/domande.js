@@ -57,16 +57,6 @@ window.QUIZ_DATA = {
    "a": "D - Audre Lorde"
   },
   {
-   "q": "Quale romanzo di Leslie Feinberg è considerato un classico della letteratura trans?",
-   "o": [
-    "A - Stone Butch Blues",
-    "B - Gender Trouble",
-    "C - Borderlands/La Frontera",
-    "D - Rubyfruit Jungle"
-   ],
-   "a": "A - Stone Butch Blues"
-  },
-  {
    "q": "Chi ha scritto Borderlands/La Frontera, testo chiave per il pensiero queer e lesbico chicano?",
    "o": [
     "A - Cherríe Moraga",
@@ -75,16 +65,6 @@ window.QUIZ_DATA = {
     "D - Julia Kristeva"
    ],
    "a": "B - Gloria Anzaldúa"
-  },
-  {
-   "q": "Quale autrice transgender ha scritto il saggio My Words to Victor Frankenstein Above the Village of Chamounix (1994)?",
-   "o": [
-    "A - Sandy Stone",
-    "B - Kate Bornstein",
-    "C - Susan Stryker",
-    "D - Julia Serano"
-   ],
-   "a": "C - Susan Stryker"
   },
   {
    "q": "Quale libro di Judith Butler ha influenzato profondamente la teoria queer?",
@@ -168,16 +148,7 @@ window.QUIZ_DATA = {
   }
  ],
  "Cultura": [
-  {
-   "q": "Quale sportiva è nota anche per il suo attivismo LGBTQ+?",
-   "o": [
-    "A - Serena Williams",
-    "B - Simona Halep",
-    "C - Maria Sharapova",
-    "D - Megan Rapinoe"
-   ],
-   "a": "D - Megan Rapinoe"
-  },
+
   {
    "q": "Quale teorica è nota per il concetto di performatività di genere, centrale nella teoria queer e nel transfemminismo?",
    "o": [
@@ -198,18 +169,9 @@ window.QUIZ_DATA = {
    ],
    "a": "C - La doppia ascia"
   },
+
   {
-   "q": "Quale concetto descrive l'intreccio tra diverse forme di oppressione (genere, razza, classe)?",
-   "o": [
-    "A - Universalismo",
-    "B - Intersezionalità",
-    "C - Essenzialismo",
-    "D - Determinismo biologico"
-   ],
-   "a": "B - Intersezionalità"
-  },
-  {
-   "q": "Quale scrittrice afroamericana lesbica ha pubblicato la raccolta di saggi Sister Outsider?",
+   "q": "Quale scrittrice ha pubblicato la raccolta di saggi Sister Outsider?",
    "o": [
     "A - Alice Walker",
     "B - Toni Morrison",
@@ -279,7 +241,7 @@ window.QUIZ_DATA = {
    "a": "B - Inclusività delle identità di genere"
   },
   {
-   "q": "Quale articolo della Convenzione è più spesso invocato nei casi LGBT?",
+   "q": "Quale articolo della Convenzione europea dei diritti dell'uomo è più spesso invocato nei casi LGBT?",
    "o": [
     "A - Art. 1",
     "B - Art. 3",
@@ -289,7 +251,7 @@ window.QUIZ_DATA = {
    "a": "C - Art. 8"
   },
   {
-   "q": "Il caso Dudgeon v. United Kingdom riguardava:",
+   "q": "Il caso Dudgeon vs United Kingdom riguardava:",
    "o": [
     "A - Matrimonio egualitario",
     "B - Adozione",
@@ -299,17 +261,7 @@ window.QUIZ_DATA = {
    "a": "D - Criminalizzazione dell’omosessualità"
   },
   {
-   "q": "In Oliari e altri v. Italia la Corte ha stabilito che:",
-   "o": [
-    "A - Gli Stati devono prevedere una tutela legale per le coppie omosessuali",
-    "B - Il matrimonio gay è obbligatorio",
-    "C - L’adozione è obbligatoria",
-    "D - Le unioni civili sono vietate"
-   ],
-   "a": "A - Gli Stati devono prevedere una tutela legale per le coppie omosessuali"
-  },
-  {
-   "q": "Il caso Goodwin v. United Kingdom riguarda:",
+   "q": "Il caso Goodwin vs United Kingdom riguarda:",
    "o": [
     "A - Libertà di espressione",
     "B - Diritti delle persone trans",
@@ -319,7 +271,7 @@ window.QUIZ_DATA = {
    "a": "B - Diritti delle persone trans"
   },
   {
-   "q": "In Vallianatos v. Grecia la Corte ha deciso che:",
+   "q": "In Vallianatos vs Grecia la Corte ha deciso che:",
    "o": [
     "A - Le unioni civili possono escludere coppie gay",
     "B - Non esiste violazione",
@@ -339,14 +291,14 @@ window.QUIZ_DATA = {
    "a": "D - Vita privata e familiare"
   },
   {
-   "q": "Il caso Schalk and Kopf v. Austria ha stabilito che:",
+   "q": "Il caso Schalk and Kopf vs Austria ha stabilito che:",
    "o": [
-    "A - Le coppie gay rientrano nella nozione di vita familiare",
-    "B - Le coppie gay non hanno vita familiare",
+    "A - Le coppie dello stesso sesso rientrano nella nozione di vita familiare",
+    "B - Le coppie dello stesso sesso non hanno vita familiare",
     "C - Il matrimonio gay è obbligatorio",
-    "D - Solo eterosessuali sono protetti"
+    "D - Solo gli eterosessuali sono protetti"
    ],
-   "a": "A - Le coppie gay rientrano nella nozione di vita familiare"
+   "a": "A - Le coppie dello stesso sesso rientrano nella nozione di vita familiare"
   },
   {
    "q": "L’articolo 14 CEDU riguarda:",
@@ -359,7 +311,7 @@ window.QUIZ_DATA = {
    "a": "B - Divieto di discriminazione"
   },
   {
-   "q": "In Identoba v. Georgia la Corte ha trattato:",
+   "q": "In Identoba vs Georgia la Corte ha trattato:",
    "o": [
     "A - Matrimonio",
     "B - Adozione",
@@ -367,16 +319,6 @@ window.QUIZ_DATA = {
     "D - Lavoro"
    ],
    "a": "C - Violenza contro manifestanti LGBT"
-  },
-  {
-   "q": "Il caso X e altri v. Austria riguarda:",
-   "o": [
-    "A - Lavoro",
-    "B - Matrimonio",
-    "C - Identità di genere",
-    "D - Adozione da parte di coppie omosessuali"
-   ],
-   "a": "D - Adozione da parte di coppie omosessuali"
   },
   {
    "q": "La Corte CEDU è un organo di:",
@@ -389,46 +331,6 @@ window.QUIZ_DATA = {
    "a": "A - Consiglio d’Europa"
   },
   {
-   "q": "Il concetto di “margine di apprezzamento” indica:",
-   "o": [
-    "A - Obbligo assoluto",
-    "B - Spazio discrezionale degli Stati",
-    "C - Libertà totale degli Stati",
-    "D - Divieto di legiferare"
-   ],
-   "a": "B - Spazio discrezionale degli Stati"
-  },
-  {
-   "q": "In Fedotova e altri v. Russia la Corte ha affermato:",
-   "o": [
-    "A - Nessun obbligo per gli Stati",
-    "B - Solo matrimonio",
-    "C - Obbligo di riconoscimento legale delle coppie gay",
-    "D - Divieto di unioni civili"
-   ],
-   "a": "C - Obbligo di riconoscimento legale delle coppie gay"
-  },
-  {
-   "q": "Il caso Alekseyev v. Russia riguarda:",
-   "o": [
-    "A - Scuola",
-    "B - Matrimonio",
-    "C - Lavoro",
-    "D - Pride e libertà di manifestazione"
-   ],
-   "a": "D - Pride e libertà di manifestazione"
-  },
-  {
-   "q": "L’articolo 12 CEDU riguarda:",
-   "o": [
-    "A - Matrimonio",
-    "B - Libertà personale",
-    "C - Educazione",
-    "D - Salute"
-   ],
-   "a": "A - Matrimonio"
-  },
-  {
    "q": "In generale, la Corte sul matrimonio egualitario ha stabilito che:",
    "o": [
     "A - È obbligatorio per tutti gli Stati",
@@ -437,66 +339,6 @@ window.QUIZ_DATA = {
     "D - È obbligatorio solo in UE"
    ],
    "a": "B - Non è imposto ma può essere riconosciuto"
-  },
-  {
-   "q": "Il caso Salgueiro da Silva Mouta v. Portogallo riguarda:",
-   "o": [
-    "A - Lavoro",
-    "B - Matrimonio",
-    "C - Custodia dei figli e orientamento sessuale",
-    "D - Scuola"
-   ],
-   "a": "C - Custodia dei figli e orientamento sessuale"
-  },
-  {
-   "q": "La CEDU può:",
-   "o": [
-    "A - Annullare leggi nazionali direttamente",
-    "B - Arrestare persone",
-    "C - Fare leggi europee",
-    "D - Condannare gli Stati per violazioni"
-   ],
-   "a": "D - Condannare gli Stati per violazioni"
-  },
-  {
-   "q": "Il principio di non discriminazione si applica:",
-   "o": [
-    "A - A tutti i diritti della Convenzione",
-    "B - Solo ai lavoratori",
-    "C - Solo ai cittadini",
-    "D - Solo agli stranieri"
-   ],
-   "a": "A - A tutti i diritti della Convenzione"
-  },
-  {
-   "q": "Le sentenze della CEDU sono:",
-   "o": [
-    "A - Facoltative",
-    "B - Vincolanti per gli Stati condannati",
-    "C - Solo consigli",
-    "D - Applicabili solo in UE"
-   ],
-   "a": "B - Vincolanti per gli Stati condannati"
-  },
-  {
-   "q": "Quale principio limita l’obbligo degli Stati nel riconoscimento dei diritti trans?",
-   "o": [
-    "A - Sussidiarietà fiscale",
-    "B - Principio di territorialità",
-    "C - Sovranità assoluta",
-    "D - Margine di apprezzamento"
-   ],
-   "a": "D - Margine di apprezzamento"
-  },
-  {
-   "q": "Quale organismo del Consiglio d’Europa ha adottato raccomandazioni specifiche sui diritti LGBT?",
-   "o": [
-    "A - Comitato dei Ministri",
-    "B - Commissione di Venezia",
-    "C - Parlamento europeo",
-    "D - BCE"
-   ],
-   "a": "A - Comitato dei Ministri"
   },
   {
    "q": "In che anno sono avvenuti i moti di Stonewall?",
@@ -509,7 +351,7 @@ window.QUIZ_DATA = {
    "a": "C - 1969"
   },
   {
-   "q": "In che anno è nata la bandiera lesbica arancione e rosa (quella dello sfondo!)?",
+   "q": "In che anno è nata la bandiera lesbica?",
    "o": [
     "A - 2021",
     "B - 1999",
@@ -741,16 +583,6 @@ window.QUIZ_DATA = {
    "a": "C - La sua morte durante una protesta"
   },
   {
-   "q": "In The L Word, quale personaggio crea 'The Chart' per mappare le relazioni lesbiche?",
-   "o": [
-    "A - Shane McCutcheon",
-    "B - Bette Porter",
-    "C - Dana Fairbanks",
-    "D - Alice Pieszecki"
-   ],
-   "a": "D - Alice Pieszecki"
-  },
-  {
    "q": "In Orange is the New Black, quale attività illegale avvia Piper in carcere nella stagione 3?",
    "o": [
     "A - Vendere biancheria usata",
@@ -809,16 +641,6 @@ window.QUIZ_DATA = {
     "D - Un matrimonio forzato religioso"
    ],
    "a": "B - L'espulsione da casa per la sua sessualità"
-  },
-  {
-   "q": "In The L Word, quale diagnosi medica riceve Dana Fairbanks e in quale stagione viene rivelata?",
-   "o": [
-    "A - Cancro al seno – stagione 2",
-    "B - Leucemia – stagione 2",
-    "C - Cancro al seno – stagione 3",
-    "D - Tumore al cervello – stagione 3"
-   ],
-   "a": "C - Cancro al seno – stagione 3"
   },
   {
    "q": "In the l word, quale personaggio ha una relazione extraconiugale con Bette Porter causando una crisi con Tina?",
@@ -1073,7 +895,7 @@ window.QUIZ_DATA = {
    "a": "B - Dylan Meyer"
   },
   {
-   "q": "Con quale DJ ebbe una relazione molto chiacchierata Lindsay Lohan nel 2008?",
+   "q": "Con quale DJ ebbe una relazione Lindsay Lohan nel 2008?",
    "o": [
     "A - Samantha Ronson",
     "B - Paris Hilton",
@@ -1083,7 +905,7 @@ window.QUIZ_DATA = {
    "a": "A - Samantha Ronson"
   },
   {
-   "q": "Con chi si consolò Miley Cyrus nell'estate 2019, subito dopo la separazione da Liam Hemsworth?",
+   "q": "Con chi ebbe una relazione Miley Cyrus nell'estate 2019, subito dopo la separazione da Liam Hemsworth?",
    "o": [
     "A - Cara Delevingne",
     "B - Kaitlynn Carter",
@@ -1102,16 +924,6 @@ window.QUIZ_DATA = {
    ],
    "a": "D - 070 Shake"
   },
-  {
-   "q": "Quale attrice nel 2022 ha accusato un giornale australiano di averla costretta a fare coming out?",
-   "o": [
-    "A - Ruby Rose",
-    "B - Cate Blanchett",
-    "C - Kate McKinnon",
-    "D - Rebel Wilson"
-   ],
-   "a": "D - Rebel Wilson"
-  }
  ],
  "Stereotipi": [
   {
@@ -1135,16 +947,6 @@ window.QUIZ_DATA = {
    "a": "B - E' stato usato dai media"
   },
   {
-   "q": "Quale stereotipo sulle lesbiche riguarda la camminata?",
-   "o": [
-    "A - Camminano tutte nello stesso modo",
-    "B - Hanno una camminata lesbica riconoscibile",
-    "C - Hanno un passo svelto",
-    "D - Non camminano mai in gruppo"
-   ],
-   "a": "B - Hanno una camminata lesbica riconoscibile"
-  },
-  {
    "q": "Quale dei seguenti è uno stereotipo comune sulle lesbiche (spesso chiamato 'U-Haul lesbian')?",
    "o": [
     "A - Sono tutte vegetariane",
@@ -1153,16 +955,6 @@ window.QUIZ_DATA = {
     "D - Preferiscono i cani ai gatti"
    ],
    "a": "C - Si trasferiscono insieme dopo pochi giorni di frequentazione"
-  },
-  {
-   "q": "Come si definisce una lesbica che non ha mai avuto rapporti sessuali con uomini?",
-   "o": [
-    "A - True lesbian",
-    "B - Platinum lesbian",
-    "C - Pure lesbian",
-    "D - Gold star lesbian"
-   ],
-   "a": "D - Gold star lesbian"
   },
   {
    "q": "Cosa sostiene lo stereotipo della \"lesbian bed death\"?",
@@ -1235,16 +1027,6 @@ window.QUIZ_DATA = {
     "D - Colette"
    ],
    "a": "B - Portrait de la jeune fille en feu"
-  },
-  {
-   "q": "Quale film con Rachel Weisz e Rachel McAdams esplora una relazione lesbica in una comunità ebraica ortodossa?",
-   "o": [
-    "A - The Favourite",
-    "B - Carol",
-    "C - Disobedience",
-    "D - Ammonite"
-   ],
-   "a": "C - Disobedience"
   },
   {
    "q": "Nel film Portrait of a Lady on Fire, quale elemento artistico diventa simbolo centrale della relazione tra le protagoniste?",
@@ -1335,16 +1117,6 @@ window.QUIZ_DATA = {
     "D - Naomi Alderman"
    ],
    "a": "D - Naomi Alderman"
-  },
-  {
-   "q": "Quale film diretto da Yorgos Lanthimos include una relazione lesbica all'interno di un triangolo di potere a corte?",
-   "o": [
-    "A - The Favourite",
-    "B - Spencer",
-    "C - Marie Antoinette",
-    "D - Ammonite"
-   ],
-   "a": "A - The Favourite"
   },
   {
    "q": "In Blue Is the Warmest Color, quale attrice interpreta Emma?",
@@ -1469,16 +1241,6 @@ window.QUIZ_DATA = {
    "a": "A - San Francisco"
   },
   {
-   "q": "Il quartiere Castro District è noto per:",
-   "o": [
-    "A - Essere un centro finanziario",
-    "B - Essere uno storico quartiere LGBTQ+",
-    "C - Essere una zona industriale ad alta concentrazione di persone LGBTQ+",
-    "D - Essere un sito archeologico per i monumenti LGBT"
-   ],
-   "a": "B - Essere uno storico quartiere LGBTQ+"
-  },
-  {
    "q": "Quale evento annuale celebra la visibilità e i diritti delle comunità lesbiche in molte città del mondo?",
    "o": [
     "A - Pride",
@@ -1497,16 +1259,6 @@ window.QUIZ_DATA = {
     "D - I luoghi di incontro e costruzione della comunità lesbica"
    ],
    "a": "D - I luoghi di incontro e costruzione della comunità lesbica"
-  },
-  {
-   "q": "Il termine gay village indica:",
-   "o": [
-    "A - Un quartiere urbano con forte presenza di attività e comunità LGBTQ+",
-    "B - Un villaggio LGBTQ+",
-    "C - Una comunità LGBTQ+ che si ritrova in un villaggio",
-    "D - Una città universitaria che fa eventi LGBTQ+"
-   ],
-   "a": "A - Un quartiere urbano con forte presenza di attività e comunità LGBTQ+"
   },
   {
    "q": "La geografia queer studia anche:",
@@ -1599,7 +1351,7 @@ window.QUIZ_DATA = {
    "a": "B - Polonia"
   },
   {
-   "q": "Quale Paese ha riconosciuto recentemente il matrimonio egualitario (caso raro nell’area)?",
+   "q": "Quale Paese ha riconosciuto recentemente il matrimonio egualitario?",
    "o": [
     "A - Polonia",
     "B - Ungheria",
@@ -1619,14 +1371,14 @@ window.QUIZ_DATA = {
    "a": "C - Paesi Bassi"
   },
   {
-   "q": "Da quale isola greca deriva la parola \"lesbica\"?",
+   "q": "Dove si trova l'isola di Lesbo?",
    "o": [
-    "A - Lesbo",
-    "B - Creta",
-    "C - Mykonos",
-    "D - Rodi"
+    "A - Grecia",
+    "B - Spagna",
+    "C - Portogallo",
+    "D - Stati Uniti"
    ],
-   "a": "A - Lesbo"
+   "a": "A - Grecia"
   },
   {
    "q": "Primo Paese dell'America Latina con il matrimonio egualitario a livello nazionale (2010)?",
@@ -1913,16 +1665,6 @@ window.QUIZ_DATA = {
    "a": "A - MUNA"
   },
   {
-   "q": "Quale piattaforma ha contribuito di più alla diffusione dei meme queer Gen Z?",
-   "o": [
-    "A - Facebook",
-    "B - TikTok",
-    "C - LinkedIn",
-    "D - Pinterest"
-   ],
-   "a": "B - TikTok"
-  },
-  {
    "q": "Quale soprannome è stato dato a Hayley Kiyoko dalla comunità LGBTQ+ per la sua musica a tema lesbico?",
    "o": [
     "A - Lesbian Messiah",
@@ -1943,7 +1685,7 @@ window.QUIZ_DATA = {
    "a": "D - The Ruby Fruit"
   },
   {
-   "q": "Quale YouTuber lesbica è conosciuta per la sua serie educativa 'Lesbian 101'?",
+   "q": "Quale YouTuber lesbica è conosciuta per la sua serie 'Lesbian 101'?",
    "o": [
     "A - Stevie Boebi",
     "B - Ally Hills",
@@ -1953,7 +1695,7 @@ window.QUIZ_DATA = {
    "a": "A - Stevie Boebi"
   },
   {
-   "q": "Quale YouTuber ha fatto coming out come lesbica in un video virale nel 2015?",
+   "q": "Quale YouTuber ha fatto coming out in un video virale nel 2015?",
    "o": [
     "A - Hannah Hart",
     "B - Ingrid Nilsen",
@@ -1963,7 +1705,7 @@ window.QUIZ_DATA = {
    "a": "B - Ingrid Nilsen"
   },
   {
-   "q": "Quale canzone di Hayley Kiyoko è considerata un inno per le giovani lesbiche?",
+   "q": "Quale canzone di Hayley Kiyoko è considerata un inno nella comunità lesbica?",
    "o": [
     "A - Girls Like Girls",
     "B - Curious",
@@ -2135,6 +1877,158 @@ window.QUIZ_DATA = {
    "a": "B - 6"
   }
  ],
+ "Chi vuol essere vegano?": [
+ {
+  "q": "Chi si è inventato la parola «vegan» nel 1944?",
+  "o": [
+   "A - Jamie Oliver",
+   "B - Peter Singer",
+   "C - Donald Watson",
+   "D - Leone Tolstoj"
+  ],
+  "a": "C - Donald Watson"
+ },
+ {
+  "q": "Di che è fatto il seitan?",
+  "o": [
+   "A - Soia fermentata",
+   "B - Farina di ceci",
+   "C - Riso pressato",
+   "D - Glutine di frumento"
+  ],
+  "a": "D - Glutine di frumento"
+ },
+ {
+  "q": "Il tempeh da dove viene?",
+  "o": [
+   "A - Giappone",
+   "B - Indonesia",
+   "C - Messico",
+   "D - India"
+  ],
+  "a": "B - Indonesia"
+ },
+ {
+  "q": "Che cos'è l'aquafaba, quella che monti come l'albume?",
+  "o": [
+   "A - Sciroppo d'agave",
+   "B - Succo di aloe",
+   "C - L'acqua di cottura dei ceci",
+   "D - Latte di cocco"
+  ],
+  "a": "C - L'acqua di cottura dei ceci"
+ },
+ {
+  "q": "Quando si festeggia il World Vegan Day?",
+  "o": [
+   "A - 21 marzo",
+   "B - 5 giugno",
+   "C - 1 novembre",
+   "D - 14 febbraio"
+  ],
+  "a": "C - 1 novembre"
+ },
+ {
+  "q": "Il tofu se fa cagliando...",
+  "o": [
+   "A - Il latte di mandorla",
+   "B - Il latte di cocco",
+   "C - Il latte di riso",
+   "D - Il latte di soia"
+  ],
+  "a": "D - Il latte di soia"
+ },
+ {
+  "q": "Nelle caramelle gommose, quale ingrediente NON è vegano?",
+  "o": [
+   "A - Pectina",
+   "B - Agar agar",
+   "C - Gelatina",
+   "D - Amido di mais"
+  ],
+  "a": "C - Gelatina"
+ },
+ {
+  "q": "L'agar agar, che addensa come la gelatina, si ricava da...",
+  "o": [
+   "A - Ossa di pesce",
+   "B - Semi di lino",
+   "C - Radici di manioca",
+   "D - Alghe rosse"
+  ],
+  "a": "D - Alghe rosse"
+ },
+ {
+  "q": "Il colorante rosso E120 (carminio) da dove arriva?",
+  "o": [
+   "A - Dal petrolio",
+   "B - Da un insetto, la cocciniglia",
+   "C - Dalla barbabietola",
+   "D - Dal pomodoro"
+  ],
+  "a": "B - Da un insetto, la cocciniglia"
+ },
+ {
+  "q": "Perché certi vini NON sono vegani?",
+  "o": [
+   "A - Invecchiati in botti di pelle",
+   "B - Contengono miele",
+   "C - Fermentati con lievito di birra",
+   "D - Chiarificati con albume, caseina o colla di pesce"
+  ],
+  "a": "D - Chiarificati con albume, caseina o colla di pesce"
+ },
+ {
+  "q": "Per la legge UE, sull'etichetta del latte di soia che ci deve essere scritto?",
+  "o": [
+   "A - Latte di soia",
+   "B - Succo di soia",
+   "C - Latte vegetale",
+   "D - Bevanda di soia"
+  ],
+  "a": "D - Bevanda di soia"
+ },
+ {
+  "q": "Per assorbire meglio il ferro dei legumi, a che li abbini?",
+  "o": [
+   "A - Alla vitamina C (es. limone)",
+   "B - Al tè",
+   "C - Al caffè",
+   "D - Al latte"
+  ],
+  "a": "A - Alla vitamina C (es. limone)"
+ },
+ {
+  "q": "Il tahin è una crema di...",
+  "o": [
+   "A - Arachidi",
+   "B - Ceci",
+   "C - Semi di sesamo",
+   "D - Anacardi"
+  ],
+  "a": "C - Semi di sesamo"
+ },
+ {
+  "q": "Il miso è una pasta fermentata di...",
+  "o": [
+   "A - Funghi",
+   "B - Riso soffiato",
+   "C - Soia",
+   "D - Alghe"
+  ],
+  "a": "C - Soia"
+ },
+ {
+  "q": "Il latte di cocco in lattina si fa con...",
+  "o": [
+   "A - La buccia del cocco",
+   "B - La polpa del cocco grattugiata e spremuta",
+   "C - Il cocco essiccato",
+   "D - L'acqua del cocco"
+  ],
+  "a": "B - La polpa del cocco grattugiata e spremuta"
+ },
+],
  "Coatta vegana": [
   {
    "q": "Quale di questi alimenti NON è necessariamente vegano?",
@@ -2256,11 +2150,11 @@ window.QUIZ_DATA = {
 };
 
 /* ============================================================
-   VECCHIE DOMANDE «COATTA VEGANA» (disattivate)
-   Per riattivarle, spostale dentro "Coatta vegana" qui sopra.
+   VEGAN
+
 [
  {
-  "q": "Aò, chi s'è inventato la parola «vegan» ner 1944?",
+  "q": "Chi si è inventato la parola «vegan» nel 1944?",
   "o": [
    "A - Jamie Oliver",
    "B - Peter Singer",
@@ -2270,7 +2164,7 @@ window.QUIZ_DATA = {
   "a": "C - Donald Watson"
  },
  {
-  "q": "Er seitan, a coatta, de che è fatto?",
+  "q": "Di che è fatto il seitan?",
   "o": [
    "A - Soia fermentata",
    "B - Farina di ceci",
@@ -2280,7 +2174,7 @@ window.QUIZ_DATA = {
   "a": "D - Glutine di frumento"
  },
  {
-  "q": "Er tempeh da dove viene?",
+  "q": "Il tempeh da dove viene?",
   "o": [
    "A - Giappone",
    "B - Indonesia",
@@ -2300,17 +2194,7 @@ window.QUIZ_DATA = {
   "a": "C - L'acqua di cottura dei ceci"
  },
  {
-  "q": "Qual è la vitamina che chi è vegan deve integrà pe' forza?",
-  "o": [
-   "A - Vitamina K",
-   "B - Vitamina B12",
-   "C - Vitamina C",
-   "D - Vitamina A"
-  ],
-  "a": "B - Vitamina B12"
- },
- {
-  "q": "Quando se festeggia er World Vegan Day?",
+  "q": "Quando si festeggia il World Vegan Day?",
   "o": [
    "A - 21 marzo",
    "B - 5 giugno",
@@ -2320,7 +2204,7 @@ window.QUIZ_DATA = {
   "a": "C - 1 novembre"
  },
  {
-  "q": "Er tofu se fa cagliando...",
+  "q": "Il tofu se fa cagliando...",
   "o": [
    "A - Il latte di mandorla",
    "B - Il latte di cocco",
@@ -2330,17 +2214,7 @@ window.QUIZ_DATA = {
   "a": "D - Il latte di soia"
  },
  {
-  "q": "Veganuary: in che mese te sfidano a provà a magnà vegan?",
-  "o": [
-   "A - Agosto",
-   "B - Gennaio",
-   "C - Marzo",
-   "D - Novembre"
-  ],
-  "a": "B - Gennaio"
- },
- {
-  "q": "Nelle caramelle gommose, quale ingrediente NUN è vegano?",
+  "q": "Nelle caramelle gommose, quale ingrediente NON è vegano?",
   "o": [
    "A - Pectina",
    "B - Agar agar",
@@ -2350,7 +2224,7 @@ window.QUIZ_DATA = {
   "a": "C - Gelatina"
  },
  {
-  "q": "L'agar agar, che addensa come la gelatina, se ricava da...",
+  "q": "L'agar agar, che addensa come la gelatina, si ricava da...",
   "o": [
    "A - Ossa di pesce",
    "B - Semi di lino",
@@ -2360,7 +2234,7 @@ window.QUIZ_DATA = {
   "a": "D - Alghe rosse"
  },
  {
-  "q": "Er colorante rosso E120 (carminio) da dove arriva?",
+  "q": "Il colorante rosso E120 (carminio) da dove arriva?",
   "o": [
    "A - Dal petrolio",
    "B - Da un insetto, la cocciniglia",
@@ -2370,7 +2244,7 @@ window.QUIZ_DATA = {
   "a": "B - Da un insetto, la cocciniglia"
  },
  {
-  "q": "Perché certi vini NUN so' vegani?",
+  "q": "Perché certi vini NON sono vegani?",
   "o": [
    "A - Invecchiati in botti di pelle",
    "B - Contengono miele",
@@ -2380,27 +2254,7 @@ window.QUIZ_DATA = {
   "a": "D - Chiarificati con albume, caseina o colla di pesce"
  },
  {
-  "q": "Er lievito alimentare in scaglie lo usi perché ricorda er sapore der...",
-  "o": [
-   "A - Caffè",
-   "B - Bacon",
-   "C - Formaggio",
-   "D - Cioccolato"
-  ],
-  "a": "C - Formaggio"
- },
- {
-  "q": "Er jackfruit (giaco) sfilacciato lo usano pe' imità...",
-  "o": [
-   "A - Uova strapazzate",
-   "B - Salmone affumicato",
-   "C - Carne sfilacciata (pulled pork)",
-   "D - Burro"
-  ],
-  "a": "C - Carne sfilacciata (pulled pork)"
- },
- {
-  "q": "Pe' 'a legge UE, sull'etichetta der «latte» de soia che ce deve stà scritto?",
+  "q": "Per la legge UE, sull'etichetta del latte di soia che ci deve essere scritto?",
   "o": [
    "A - Latte di soia",
    "B - Succo di soia",
@@ -2410,7 +2264,7 @@ window.QUIZ_DATA = {
   "a": "D - Bevanda di soia"
  },
  {
-  "q": "Pe' assorbì mejo er ferro de li legumi, a che li abbini?",
+  "q": "Per assorbire meglio il ferro dei legumi, a che li abbini?",
   "o": [
    "A - Alla vitamina C (es. limone)",
    "B - Al tè",
@@ -2420,27 +2274,7 @@ window.QUIZ_DATA = {
   "a": "A - Alla vitamina C (es. limone)"
  },
  {
-  "q": "Quale de 'sti alimenti NUN è vegano?",
-  "o": [
-   "A - Miele",
-   "B - Sciroppo d'acero",
-   "C - Tofu",
-   "D - Tempeh"
-  ],
-  "a": "A - Miele"
- },
- {
-  "q": "Su che legume se basa l'hummus?",
-  "o": [
-   "A - Fagioli neri",
-   "B - Ceci",
-   "C - Lenticchie",
-   "D - Fave"
-  ],
-  "a": "B - Ceci"
- },
- {
-  "q": "Er tahin è 'na crema de...",
+  "q": "Il tahin è una crema di...",
   "o": [
    "A - Arachidi",
    "B - Ceci",
@@ -2450,7 +2284,7 @@ window.QUIZ_DATA = {
   "a": "C - Semi di sesamo"
  },
  {
-  "q": "Er miso è 'na pasta fermentata de...",
+  "q": "Il miso è una pasta fermentata di...",
   "o": [
    "A - Funghi",
    "B - Riso soffiato",
@@ -2460,34 +2294,14 @@ window.QUIZ_DATA = {
   "a": "C - Soia"
  },
  {
-  "q": "Quale classico romano è già vegano così com'è?",
-  "o": [
-   "A - Saltimbocca",
-   "B - Carciofi alla romana",
-   "C - Supplì",
-   "D - Puntarelle con le alici"
-  ],
-  "a": "B - Carciofi alla romana"
- },
- {
-  "q": "Er latte de cocco in lattina se fa co'...",
+  "q": "Il latte di cocco in lattina si fa con...",
   "o": [
    "A - La buccia del cocco",
    "B - La polpa del cocco grattugiata e spremuta",
-   "C - Il cocco essiccato e il latte vaccino",
+   "C - Il cocco essiccato",
    "D - L'acqua del cocco"
   ],
   "a": "B - La polpa del cocco grattugiata e spremuta"
  },
- {
-  "q": "La «carne» de soia disidratata che trovi ar supermercato se chiama...",
-  "o": [
-   "A - Tempeh",
-   "B - Tofu affumicato",
-   "C - Seitan",
-   "D - Proteine di soia testurizzate"
-  ],
-  "a": "D - Proteine di soia testurizzate"
- }
 ]
 ============================================================ */

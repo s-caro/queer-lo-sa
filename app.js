@@ -31,6 +31,7 @@ const categoryMeta = {
   "Lesbo Drama":   { color: "#e03a56", icon: "🎭" },
   "Stereotipi":    { color: "#34495e", icon: "💭" },
   "Coatta vegana": { color: "#5aa832", icon: "🌱" },
+  "Chi vuol essere vegano?": { color: "#1f7a4d", icon: "🥑" },
   "Musica":        { color: "#6c5ce7", icon: "🎵" },
 };
 const FALLBACK_COLORS = ["#ff66b2", "#3498db", "#2ecc71", "#f1c40f", "#e67e22", "#e74c3c"];
@@ -458,14 +459,31 @@ function drawWheel() {
     // testo, ridimensionato per stare nello spicchio
     ctx.rotate(slice / 2);
     const label = `${cat.toUpperCase()}`;
-    let size = 40;
-    ctx.font = `700 ${size}px Fredoka, Arial, sans-serif`;
     const maxW = R * .62;
-    while (ctx.measureText(label).width > maxW && size > 18) { size -= 1; ctx.font = `700 ${size}px Fredoka, Arial, sans-serif`; }
+    const fit = (txt, start, min) => {
+      let sz = start; ctx.font = `700 ${sz}px Fredoka, Arial, sans-serif`;
+      while (ctx.measureText(txt).width > maxW && sz > min) { sz -= 1; ctx.font = `700 ${sz}px Fredoka, Arial, sans-serif`; }
+      return sz;
+    };
+    // nomi lunghi: su due righe invece di rimpicciolirli troppo
+    let lines = [label];
+    if (fit(label, 40, 18) < 30 && label.includes(' ')) {
+      const words = label.split(' ');
+      let best = null;
+      for (let k = 1; k < words.length; k++) {
+        const a = words.slice(0, k).join(' '), b = words.slice(k).join(' ');
+        const w = Math.max(a.length, b.length);
+        if (!best || w < best.w) best = { w, l: [a, b] };
+      }
+      lines = best.l;
+    }
+    const size = Math.min(...lines.map(l => fit(l, lines.length > 1 ? 34 : 40, 18)));
+    ctx.font = `700 ${size}px Fredoka, Arial, sans-serif`;
     ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
     ctx.shadowColor = 'rgba(0,0,0,.45)'; ctx.shadowBlur = 6; ctx.shadowOffsetY = 2;
     ctx.fillStyle = '#fff';
-    ctx.fillText(label, R * .86, 0);
+    const lh = size * 1.05;
+    lines.forEach((l, k) => ctx.fillText(l, R * .86, (k - (lines.length - 1) / 2) * lh));
     ctx.font = `${46}px "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif`;
     ctx.textAlign = 'center';
     ctx.fillText(icon, R * .935, 0);
