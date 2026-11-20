@@ -1107,7 +1107,9 @@ function advance() {
 ['pointerdown', 'touchend', 'keydown'].forEach(ev =>
   document.addEventListener(ev, () => { Music.unlock(); Sfx.unlock(); }, { capture: true, passive: true }));
 
-document.addEventListener('keydown', e => {
+// Tasti "avanti" (tastiera e puntatori laser/presenter)
+const ADVANCE_KEYS = ['Tab', ' ', 'Enter', 'ArrowRight', 'ArrowDown', 'PageDown', 'PageUp', 'ArrowLeft', 'ArrowUp', 'F5', 'b', 'B', '.'];
+window.addEventListener('keydown', e => {
   if (e.key === 'Escape' && document.body.classList.contains('menu-open')) { toggleMenu(false); return; }
   if ($('question-list').classList.contains('show')) {
     if (e.key === 'Escape') {
@@ -1118,11 +1120,15 @@ document.addEventListener('keydown', e => {
     return;
   }
   if ($('settings').classList.contains('show')) { if (e.key === 'Escape') closeSettings(); if (e.key === 'Enter') saveSettings(); return; }
-  if (['Tab', ' ', 'Enter', 'ArrowRight'].includes(e.key)) { e.preventDefault(); advance(); }
+  if (ADVANCE_KEYS.includes(e.key)) {
+    e.preventDefault(); e.stopPropagation();
+    if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur();
+    if (!e.repeat) advance();
+  }
   else if (e.key === 'r' || e.key === 'R') replayMusic();
   else if (e.key === 'm' || e.key === 'M') toggleMute();
   else if (e.key === 'f' || e.key === 'F') toggleFullscreen();
-});
+}, { capture: true });
 
 document.addEventListener('click', e => {
   if (document.body.classList.contains('menu-open') && !e.target.closest('#burger')) {
